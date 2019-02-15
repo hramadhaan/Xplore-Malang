@@ -30,21 +30,23 @@
             android:fontFamily="@font/gibson_bold"
             android:textSize="25dp"/>
 
-        <ImageView
+        <Button
             android:layout_marginTop="40dp"
             android:id="@+id/button_google"
-
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:src="@drawable/google"
+            android:background="@drawable/google"
             android:elevation="30dp"
             android:layout_below="@+id/tv_register"/>
-        <ImageView
-
+        <Button
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
             android:id="@+id/button_facebook"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:src="@drawable/facebook"
+            android:background="@drawable/facebook"
             android:layout_below="@+id/button_google"
             android:layout_marginTop="30dp"/>
         <TextView

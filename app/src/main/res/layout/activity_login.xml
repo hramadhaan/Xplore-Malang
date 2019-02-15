@@ -73,28 +73,34 @@
                 android:textColor="#fff"
                 android:inputType="textPassword"/>
 
-            <ImageView
+            <Button
                 android:layout_marginTop="10dp"
                 android:id="@+id/button_login"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
                 android:layout_below="@+id/et_password"
-                android:src="@drawable/button_login"/>
-            <ImageView
+                android:background="@drawable/button_login"/>
+
+            <com.google.android.gms.common.SignInButton
             android:id="@+id/button_signin_google"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp"
             android:layout_below="@id/button_login"
-            android:layout_marginTop="30dp"
-            android:src="@drawable/sign_in_google"/>
+            android:layout_marginTop="30dp" />
 
-            <ImageView
+            <Button
                 android:id="@+id/button_signin_fb"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@id/button_signin_google"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/sign_in_fb"/>
+                android:background="@drawable/sign_in_fb"/>
             <TextView
                 android:layout_marginRight="60dp"
                 android:gravity="right"

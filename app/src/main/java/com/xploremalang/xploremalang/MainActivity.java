@@ -15,10 +15,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    public void pindahRegister(View view) {
-        Intent pindahRegister = new Intent(MainActivity.this,LoginActivity.class);
-        startActivity(pindahRegister);
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }
