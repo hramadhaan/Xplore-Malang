@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".pariwisata.pariwisata_bromo"></activity>
+        <activity android:name=".Pariwisata.Pariwisata_bromo" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +20,7 @@
         </activity>
         <activity android:name=".AccountActivity.LoginActivity" />
         <activity android:name=".AccountActivity.RegisterAccount" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
