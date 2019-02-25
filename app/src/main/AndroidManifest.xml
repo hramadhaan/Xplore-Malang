@@ -5,11 +5,10 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label=" "
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".pariwisata.pariwisata_bromo"></activity>
         <activity android:name=".Pariwisata.Pariwisata_bromo" />
         <activity android:name=".SplashScreen">
             <intent-filter>
@@ -21,6 +20,10 @@
         <activity android:name=".AccountActivity.LoginActivity" />
         <activity android:name=".AccountActivity.RegisterAccount" />
         <activity android:name=".MainActivity" />
+        <activity
+            android:name=".Nav_Drawer"
+
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

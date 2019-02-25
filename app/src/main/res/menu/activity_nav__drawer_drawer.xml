@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Cuaca Saat ini">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+
+                android:title="Malang " />
+
+        </menu>
+    </item>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_edit_profil"
+            android:icon="@drawable/ic_action_user"
+            android:title="Edit Profil" />
+        <item
+            android:id="@+id/nav_feedback"
+            android:icon="@drawable/ic_action_feedback"
+            android:title="Lihat Feedback" />
+        <item
+            android:id="@+id/nav_diskusi"
+            android:icon="@drawable/ic_action_group"
+            android:title="Lihat Diskusi" />
+        <item
+            android:id="@+id/nav_about_us"
+            android:icon="@drawable/ic_action_about_us"
+            android:title="About Us" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_action_logout"
+            android:title="Logout" />
+    </group>
+
+
+
+
+</menu>
