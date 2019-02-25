@@ -1,61 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Pariwisata.Pariwisata_bromo">
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="-90dp"
-            android:src="@drawable/foto_bromo" />
+            android:src="@drawable/foto_bromo"
+            android:layout_marginTop="-90dp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="220dp">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
                 android:layout_marginTop="150dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
                 android:background="#fff"
                 android:fontFamily="@font/gibson_bold"
                 android:gravity="center|center"
-                android:text="Wisata Alama Bromo"
-                android:textColor="#f4f" />
-
+                android:text="Wisata Alam Bromo"
+                android:textColor="#1D1DFF"
+                android:textSize="24sp" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/judul_bromo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="220dp"
+                android:fontFamily="@font/gibson_bold"
                 android:gravity="center_horizontal"
-                android:text="Wisata Alam Bromo"
+                android:text="DESKRIPSI"
                 android:textColor="#4C5264"
-                android:textSize="18sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/deskripsi_bromo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/judul_bromo"
-                android:layout_marginTop="10sp"
-                android:text="@string/deskripsi_bromo"
+                android:layout_marginTop="11dp"
+                android:fontFamily="@font/gibson_regularitalic"
+                android:gravity="center"
+                android:text="Wisata Gunung Bromo terletak di Jawa Timur ini memang mengundang banyak wisatawan karena keindahan pemandangan alam dari ketinggian pegunungan, nama Gunung Bromo sendiri diambil dari salah satu dewa utama dalam agama Hindu yaitu Brahma, gunung ini memiliki ketinggian 2329 meter di atas permukaan air laut.  Status Gunung Bromo masih aktif membuat daya tarik tersendiri bagi wisatawan, hamparan gunung nan indah dikelilingi awan putih membuat mata tak jenuh untuk memandang, wisata Gunung Bromo sangat ramai dikunjungi wisatawan khususnya pada hari libur.  Dari Gunung Bromo kita bisa melihat indahnya matahari terbit dari ketinggian 2.780  meter di atas permukaan air laut dihiasi indahnya hamparan pegunungan seperti negeri di atas awan. Tidak sedikit wisatawan ingin mengabadikan momen indah ini, dari atap penanjakan wisatawan dapat melihat indahnya gunung semeru yang mengeluarkan asap yang dibarengi dengan naiknya matahari memberikan cahaya keindahan di Wisata Gunung Bromo ini."
                 android:textSize="13sp" />
 
             <TextView
@@ -63,21 +71,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/deskripsi_bromo"
-                android:layout_marginTop="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/gibson_bold"
                 android:gravity="center"
-                android:text="Lokasi" />
+                android:text="LOKASI"
+                android:textStyle="bold" />
 
-            <android.support.v4.app.FragmentTabHost
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-            </android.support.v4.app.FragmentTabHost>
 
         </RelativeLayout>
 
     </RelativeLayout>
 
 
+</ScrollView>
 
 
-</android.support.constraint.ConstraintLayout>
+
