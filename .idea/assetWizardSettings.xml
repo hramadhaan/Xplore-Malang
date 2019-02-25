@@ -3,22 +3,150 @@
   <component name="WizardSettings">
     <option name="children">
       <map>
+<<<<<<< HEAD
         <entry key="vectorWizard">
+=======
+        <entry key="imageWizard">
+>>>>>>> d041084ae163b062b8d7357fa66f377f9986d0e3
           <value>
             <PersistentState>
               <option name="children">
                 <map>
+<<<<<<< HEAD
                   <entry key="vectorAssetStep">
+=======
+                  <entry key="imageAssetPanel">
+>>>>>>> d041084ae163b062b8d7357fa66f377f9986d0e3
                     <value>
                       <PersistentState>
                         <option name="children">
                           <map>
+<<<<<<< HEAD
                             <entry key="clipartAsset">
                               <value>
                                 <PersistentState>
                                   <option name="values">
                                     <map>
                                       <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_clear_black_24dp.xml" />
+=======
+                            <entry key="actionbar">
+                              <value>
+                                <PersistentState>
+                                  <option name="children">
+                                    <map>
+                                      <entry key="clipArt">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="color" value="000000" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                      <entry key="clipartAsset">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_exit_to_app_black_24dp.xml" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                      <entry key="image">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="color" value="000000" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                    </map>
+                                  </option>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="imageAsset" value="C:\Users\Aulia\Downloads\Video\user.png" />
+                                      <entry key="outputName" value="ic_action_logout" />
+                                      <entry key="theme" value="HOLO_DARK" />
+                                      <entry key="themeColor" value="ffffff" />
+                                    </map>
+                                  </option>
+                                </PersistentState>
+                              </value>
+                            </entry>
+                            <entry key="launcher">
+                              <value>
+                                <PersistentState>
+                                  <option name="children">
+                                    <map>
+                                      <entry key="foregroundImage">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="color" value="000000" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                    </map>
+                                  </option>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="backgroundLayerName" value="ic_launcher_background" />
+                                      <entry key="foregroundImage" value="C:\Users\Aulia\Downloads\Video\feedback.png" />
+                                      <entry key="foregroundLayerName" value="ic_launcher_foreground" />
+                                      <entry key="outputName" value="ic_menu_feedback" />
+                                    </map>
+                                  </option>
+                                </PersistentState>
+                              </value>
+                            </entry>
+                            <entry key="launcherLegacy">
+                              <value>
+                                <PersistentState>
+                                  <option name="children">
+                                    <map>
+                                      <entry key="clipArt">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="color" value="000000" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                    </map>
+                                  </option>
+                                </PersistentState>
+                              </value>
+                            </entry>
+                            <entry key="notification">
+                              <value>
+                                <PersistentState>
+                                  <option name="children">
+                                    <map>
+                                      <entry key="clipArt">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="color" value="000000" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+>>>>>>> d041084ae163b062b8d7357fa66f377f9986d0e3
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +156,12 @@
                         </option>
                         <option name="values">
                           <map>
+<<<<<<< HEAD
                             <entry key="outputName" value="ic_clear_black_24dp" />
                             <entry key="sourceFile" value="C:\Users\den" />
+=======
+                            <entry key="outputIconType" value="ACTIONBAR" />
+>>>>>>> d041084ae163b062b8d7357fa66f377f9986d0e3
                           </map>
                         </option>
                       </PersistentState>
