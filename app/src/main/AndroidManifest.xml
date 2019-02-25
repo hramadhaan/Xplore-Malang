@@ -11,6 +11,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Pariwisata.Pariwisata_bromo" />
         <activity android:name=".SplashScreen">
+
+            <meta-data android:name="com.facebook.sdk.ApplicationId"
+                android:value="@string/facebook_app_id"/>
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
