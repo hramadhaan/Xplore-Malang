@@ -3,4 +3,5 @@
     <color name="colorPrimary">#fff</color>
     <color name="colorPrimaryDark">#00C6FF</color>
     <color name="colorAccent">#fff</color>
+    <color name="DeepSkyBlue">#00BFFF</color>
 </resources>
