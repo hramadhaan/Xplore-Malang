@@ -9,10 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
-=======
-        <activity android:name=".Pariwisata.Pariwisata_bromo" />
->>>>>>> d041084ae163b062b8d7357fa66f377f9986d0e3
         <activity android:name=".SplashScreen">
             <meta-data
                 android:name="com.facebook.sdk.ApplicationId"
