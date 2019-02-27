@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/item_camera"
-        android:title="Upload"
-        android:icon="@drawable/camera_button"/>
-    <item
-        android:id="@+id/item_home"
+        android:id="@+id/home_button"
         android:title="Home"
         android:icon="@drawable/home_button"/>
     <item
-        android:id="@+id/item_user"
+        android:id="@+id/camera_view"
+        android:title="Feed"
+        android:icon="@drawable/camera_button"/>
+    <item
+        android:id="@+id/profile_button"
         android:title="Profile"
         android:icon="@drawable/user_button"/>
 

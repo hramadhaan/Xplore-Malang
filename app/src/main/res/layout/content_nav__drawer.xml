@@ -8,31 +8,24 @@
     tools:context=".Nav_Drawer"
     tools:showIn="@layout/app_bar_nav__drawer">
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/bottom_navbar"
-            android:background="#ccc">
-
-        </FrameLayout>
-
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true">
         <android.support.design.widget.BottomNavigationView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/bottom_navbar"
-            android:layout_alignParentBottom="true"
-            app:menu="@menu/item_bottom_navbar"
-            android:background="@android:color/white"
-            app:itemIconTint="@drawable/item_selected"
-            app:itemTextColor="@drawable/item_selected">
+            android:id="@+id/BottomView_Bar"
+            android:background="#dcd"
+            app:menu="@menu/bottomview_bar">
 
         </android.support.design.widget.BottomNavigationView>
-
     </RelativeLayout>
 
+</RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
