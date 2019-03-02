@@ -6,7 +6,7 @@
         android:title="Home"
         android:icon="@drawable/home_button"/>
     <item
-        android:id="@+id/camera_view"
+        android:id="@+id/feed_button"
         android:title="Feed"
         android:icon="@drawable/camera_button"/>
     <item

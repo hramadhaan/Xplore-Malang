@@ -23,5 +23,20 @@
         app:headerLayout="@layout/nav_header_nav__drawer"
         app:menu="@menu/activity_nav__drawer_drawer" />
 
+    <RelativeLayout
+        android:layout_width="@dimen/activity_horizontal_margin"
+        android:layout_height="match_parent">
+
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottom_navbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/bottomview_bar"
+            android:background="?android:attr/windowBackground">
+
+        </android.support.design.widget.BottomNavigationView>
+    </RelativeLayout>
 
 </android.support.v4.widget.DrawerLayout>

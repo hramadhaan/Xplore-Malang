@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.xploremalang.xploremalang"
-        minSdkVersion 16
+        minSdkVersion 25
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -32,5 +32,6 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.facebook.android:facebook-android-sdk:4.28.0'
     implementation 'com.roughike:bottom-bar:2.0'
+    implementation 'com.getbase:floatingactionbutton:1.10.1'
 }
 apply plugin: 'com.google.gms.google-services'
