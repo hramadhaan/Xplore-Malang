@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.xploremalang.xploremalang.UploadFoto.UploadActivity;
+
 public class SplashScreen extends AppCompatActivity {
 
     @Override
@@ -18,7 +20,7 @@ public class SplashScreen extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
-                    startActivity(new Intent(SplashScreen.this,Nav_Drawer.class));
+                    startActivity(new Intent(SplashScreen.this, Nav_Drawer.class));
                     finish();
 
                 }
