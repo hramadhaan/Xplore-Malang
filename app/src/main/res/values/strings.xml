@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">XploreMalang</string>
+    <string name="deskripsi_bromo">deskripsi_bromo</string>
+    <string name="title_activity_nav__drawer">Xplore Malang</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="facebook_app_id">449994548870624</string>
+    <string name="facebook_login_protocol_scheme">fb449994548870624</string>
+    <string name="about">Xplore Malang adalah sebuah aplikasi mobule yang bergerak di bidang pariwisata, khususnya pariwisata wilayah Malang. Aplikasi ini berguna untuk sebagai asisten Anda untuk menemani perjalanan Anda di Malang. Xplore Malang masih dalam tahap pengembangan. Maka daripada itu kami sebagai owner Xplore Malang meminta untuk pengguna untuk memberikan feedback aplikasi ini ke alamat xploremalang.apps@gmail.com</string>
+</resources>

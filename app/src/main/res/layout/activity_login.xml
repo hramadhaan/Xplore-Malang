@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_register"
+    tools:context=".AccountActivity.LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="290dp"
+            android:layout_height="120dp"
+            android:src="@drawable/putih"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_login"
+                android:layout_marginTop="180dp"
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:fontFamily="@font/gibson_regular"/>
+            <TextView
+                android:layout_marginTop="35dp"
+                android:id="@+id/tv_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="E-Mail"
+                android:fontFamily="@font/gibson_regular"
+                android:textColor="#E2E8ED"
+                android:layout_marginLeft="50dp"
+                android:layout_below="@+id/tv_login"/>
+
+            <EditText
+                android:id="@+id/et_email"
+                android:backgroundTint="#fff"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_email"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textColor="#fff"
+                android:fontFamily="@font/gibson_regular"
+                android:inputType="textEmailAddress"
+                android:textColorLink="#fff" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_password"
+                android:layout_below="@id/et_email"
+                android:textColor="#fff"
+                android:text="Password"
+                android:layout_marginLeft="50dp"/>
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_below="@+id/tv_password"
+                android:layout_marginRight="50dp"
+                android:backgroundTint="#fff"
+                android:textColor="#fff"
+                android:inputType="textPassword"/>
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:id="@+id/button_login"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_below="@+id/et_password"
+                android:background="@drawable/button_login"/>
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/login_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp" />
+
+            <com.google.android.gms.common.SignInButton
+            android:id="@+id/button_signin_google"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp"
+            android:layout_below="@id/button_login"
+            android:layout_marginTop="30dp" />
+
+            <Button
+                android:id="@+id/button_signin_fb"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/button_signin_google"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/sign_in_fb"/>
+            <TextView
+                android:layout_marginRight="60dp"
+                android:gravity="right"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/button_signin_fb"
+                android:fontFamily="@font/gibson_regular"
+                android:textSize="14dp"
+                android:textColor="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Already have an account ?"/>
+
+            <TextView
+                android:gravity="bottom|center"
+                android:layout_marginBottom="5dp"
+                android:text="XPLORE MALANG © 2019"
+                android:fontFamily="@font/gibson_regular"
+                android:textSize="7dp"
+                android:textColor="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

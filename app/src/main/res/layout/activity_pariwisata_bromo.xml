@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pariwisata.Pariwisata_bromo">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/foto_bromo"
+            android:layout_marginTop="-90dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="150dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="#fff"
+                android:fontFamily="@font/gibson_bold"
+                android:gravity="center|center"
+                android:text="Wisata Alam Bromo"
+                android:textColor="#1D1DFF"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/judul_bromo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="220dp"
+                android:fontFamily="@font/gibson_bold"
+                android:gravity="center_horizontal"
+                android:text="DESKRIPSI"
+                android:textColor="#4C5264"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/deskripsi_bromo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/judul_bromo"
+                android:layout_marginTop="11dp"
+                android:fontFamily="@font/gibson_regularitalic"
+                android:gravity="center"
+                android:text="Wisata Gunung Bromo terletak di Jawa Timur ini memang mengundang banyak wisatawan karena keindahan pemandangan alam dari ketinggian pegunungan, nama Gunung Bromo sendiri diambil dari salah satu dewa utama dalam agama Hindu yaitu Brahma, gunung ini memiliki ketinggian 2329 meter di atas permukaan air laut.  Status Gunung Bromo masih aktif membuat daya tarik tersendiri bagi wisatawan, hamparan gunung nan indah dikelilingi awan putih membuat mata tak jenuh untuk memandang, wisata Gunung Bromo sangat ramai dikunjungi wisatawan khususnya pada hari libur.  Dari Gunung Bromo kita bisa melihat indahnya matahari terbit dari ketinggian 2.780  meter di atas permukaan air laut dihiasi indahnya hamparan pegunungan seperti negeri di atas awan. Tidak sedikit wisatawan ingin mengabadikan momen indah ini, dari atap penanjakan wisatawan dapat melihat indahnya gunung semeru yang mengeluarkan asap yang dibarengi dengan naiknya matahari memberikan cahaya keindahan di Wisata Gunung Bromo ini."
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/lokasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deskripsi_bromo"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/gibson_bold"
+                android:gravity="center"
+                android:text="LOKASI"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+        
+        <LinearLayout
+            android:layout_width="405dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:layout_marginTop="600dp">
+
+            TextView
+            android:id="@+id/lblRateMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rate Me"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="4"
+                android:stepSize="1.0"
+                android:rating="2.0" />
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/lblResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Result : "
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/txtRatingValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
+
+
+
