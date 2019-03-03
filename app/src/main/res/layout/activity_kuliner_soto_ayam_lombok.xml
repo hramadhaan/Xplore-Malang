@@ -14,7 +14,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/sotoayam"
+            android:src="@drawable/foto_bromo"
             android:layout_marginTop="-90dp"/>
 
         <RelativeLayout
@@ -88,7 +88,7 @@
             android:orientation="vertical"
             android:layout_marginTop="600dp">
 
-            TextView
+            <TextView
             android:id="@+id/lblRateMe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
