@@ -27,8 +27,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
-import com.xploremalang.xploremalang.Fragment.FeedFragment;
-import com.xploremalang.xploremalang.Nav_Drawer;
+import com.xploremalang.xploremalang.Activity_Utama;
 import com.xploremalang.xploremalang.R;
 
 public class UploadActivity extends AppCompatActivity {
@@ -154,7 +153,7 @@ public class UploadActivity extends AppCompatActivity {
     }
 
     private void openImagesActivity(){
-    Intent intent = new Intent(this, Nav_Drawer.class);
+    Intent intent = new Intent(this, Activity_Utama.class);
     startActivity(intent);
     }
 }

@@ -22,6 +22,11 @@ import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.xploremalang.xploremalang.AccountActivity.LoginActivity;
 import com.xploremalang.xploremalang.AccountActivity.RegisterAccount;
 
@@ -38,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
     CallbackManager callbackManager;
     LoginButton loginButton;
     ProgressDialog progressDialog;
+
+    FirebaseAuth mAuth;
+    FirebaseAuth.AuthStateListener mAuthListener;
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -103,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             //printKeyHash();
-            Intent intent = new Intent(this, LoginActivity.class);
+            Intent intent = new Intent(this, Activity_Utama.class);
             startActivity(intent);
 
 
