@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_height="match_parent"
+    tools:context=".Content.TambahKonten">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Konten"
+        android:id="@+id/nama_konten"/>
+    <Spinner
+        android:entries="@array/kontenNama"
+        android:id="@+id/spinner_konten"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/nama_konten"
+        android:layout_alignBaseline="@+id/nama_konten"></Spinner>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/judul_konten"
+        android:layout_below="@id/nama_konten"
+        android:text="Judul Konten"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_wisata"
+        android:inputType="textCapSentences"
+        android:layout_toRightOf="@+id/judul_konten"
+        android:layout_alignBaseline="@id/judul_konten"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/deskripsi_konten"
+        android:text="Deksripsi Konten"
+        android:layout_below="@+id/judul_konten"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_deskripsi"
+        android:layout_toRightOf="@+id/deskripsi_konten"
+        android:layout_alignBaseline="@id/deskripsi_konten"/>
+
+    <TextView
+        android:layout_below="@+id/deskripsi_konten"
+        android:text="Latitude S"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/latitude"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_latitude"
+        android:layout_alignBaseline="@+id/latitude"
+        android:layout_toRightOf="@id/latitude"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/longtitude"
+        android:text="Longtitude E"
+        android:layout_below="@id/latitude"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_longtitude"
+        android:layout_alignBaseline="@+id/longtitude"
+        android:layout_toRightOf="@id/longtitude"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_tambah_foto"
+        android:layout_below="@id/longtitude"
+        android:layout_marginTop="20dp"
+        android:text="Input Foto"/>
+
+    <ImageView
+        android:id="@+id/view_gambar_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btn_tambah_foto"
+        android:layout_above="@id/progress_home"/>
+
+    <ProgressBar
+        android:id="@+id/progress_home"
+        android:layout_above="@id/btn_tambah_konten"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"/>
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_tambah_konten"
+        android:text="Tambah Konten"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"/>
+    
+</RelativeLayout>
+</LinearLayout>

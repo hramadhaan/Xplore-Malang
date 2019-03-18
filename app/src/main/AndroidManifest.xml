@@ -11,11 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Content.ActivityDetail"></activity>
+        <activity android:name=".Content.TambahKonten" />
         <activity
             android:name=".Activity_Utama"
-            android:label=""
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".Feedback"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Feedback" />
         <activity
             android:name=".UploadFoto.UploadActivity"
             android:parentActivityName=".Activity_Utama" />

@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             URL profile_picture = new URL("https://graph.facebook.com/" + object.getString("id") + "/picture?width=250&height=250");
 
-            //Picasso.with(this).load(profile_picture.toString()).into(img_avatar);
+            //Glide.with(this).load(profile_picture.toString()).into(img_avatar);
             Toast.makeText(this, "" + object.getString("email"), Toast.LENGTH_SHORT).show();
             //Toast.makeText(this, "" +object.getString(""), Toast.LENGTH_SHORT).show();
             //txt_email.setText(object.getString("email"));

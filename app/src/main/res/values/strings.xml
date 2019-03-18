@@ -12,4 +12,11 @@
     <string name="facebook_login_protocol_scheme">fb449994548870624</string>
     <string name="about">Xplore Malang adalah sebuah aplikasi mobule yang bergerak di bidang pariwisata, khususnya pariwisata wilayah Malang. Aplikasi ini berguna untuk sebagai asisten Anda untuk menemani perjalanan Anda di Malang. Xplore Malang masih dalam tahap pengembangan. Maka daripada itu kami sebagai owner Xplore Malang meminta untuk pengguna untuk memberikan feedback aplikasi ini ke alamat xploremalang.apps@gmail.com</string>
     <string name="title_activity__utama">Activity_Utama</string>
+    <string name="nama_collapse">Nama</string>
+
+    <array name="kontenNama">
+        <item>Pariwisata</item>
+        <item>Kuliner</item>
+        <item>Oleh Oleh</item>
+    </array>
 </resources>
