@@ -2,6 +2,7 @@ package com.xploremalang.xploremalang;
 
 import android.content.Intent;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -23,6 +24,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.xploremalang.xploremalang.AccountActivity.LoginActivity;
@@ -37,6 +42,7 @@ public class Activity_Utama extends AppCompatActivity
     private FirebaseAuth.AuthStateListener mAuthListener;
     ImageView mimageView;
     TextView mtextView;
+    GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +53,9 @@ public class Activity_Utama extends AppCompatActivity
 
         ImageView mimageView = (ImageView) findViewById(R.id.imageView);
         TextView mtextView = (TextView) findViewById(R.id.textView);
+
+        mimageView = findViewById(R.id.imageView);
+        mtextView = findViewById(R.id.textView);
 
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.navbar_head);
@@ -59,8 +68,6 @@ public class Activity_Utama extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
 
 //        LOG OUT
         mAuth = FirebaseAuth.getInstance();

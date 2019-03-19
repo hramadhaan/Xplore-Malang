@@ -1,11 +1,16 @@
 package com.xploremalang.xploremalang.AccountActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -16,6 +21,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,18 +31,40 @@ import com.xploremalang.xploremalang.R;
 
 public class LoginActivity extends AppCompatActivity {
 
+
+    EditText login_email;
+    EditText login_password;
+    Button submit_login;
     private SignInButton mbutton_signin_google;
     private static final int RC_SIGN_IN = 1;
     private GoogleApiClient mGoogleApiClient;
     private static final String TAG="MAIN_ACTIVITY";
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    TextView sudah;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        sudah = findViewById(R.id.sudah_punya_akun);
+
+//        sudah.setOnClickListener(new View.OnClickListener() {
+////            @Override
+////            public void onClick(View v) {
+////                Intent i = new Intent(LoginActivity.this,RegistrationActivity.class);
+////                startActivity(i);
+////            }
+//        });
+
+        submit_login = findViewById(R.id.button_login);
+        submit_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnSubmit();
+            }
+        });
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -72,6 +100,35 @@ public class LoginActivity extends AppCompatActivity {
                 signIn();
             }
         });
+
+        login_email = findViewById(R.id.et_email);
+        login_password = findViewById(R.id.et_password);
+    }
+
+    public void btnSubmit(){
+
+        String str_email = login_email.getText().toString();
+        String str_password = login_password.getText().toString();
+
+        if (TextUtils.isEmpty(str_email)||TextUtils.isEmpty(str_password)){
+            Toast.makeText(LoginActivity.this,"All fields are required",Toast.LENGTH_LONG).show();
+        } else {
+            mAuth.signInWithEmailAndPassword(str_email, str_password)
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()){
+                                ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
+                                progressDialog.setMessage("Please wait...");
+                                progressDialog.show();
+                                Toast.makeText(LoginActivity.this,"Login Succes..",Toast.LENGTH_SHORT).show();
+                            } else {
+                                Log.e("ERROR",task.getException().toString());
+                                Toast.makeText(LoginActivity.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+        }
     }
 
     @Override

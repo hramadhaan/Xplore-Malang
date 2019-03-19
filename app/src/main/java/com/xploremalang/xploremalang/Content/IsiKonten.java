@@ -1,5 +1,7 @@
 package com.xploremalang.xploremalang.Content;
 
+import android.text.Editable;
+
 import com.google.firebase.database.Exclude;
 
 public class IsiKonten {
@@ -13,7 +15,7 @@ public class IsiKonten {
     private String key;
 
     public IsiKonten(){
-//        empty
+//        adsa
     }
 
     public IsiKonten (int position) {

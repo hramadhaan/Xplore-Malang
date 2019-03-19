@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Content.ActivityDetail"
-    tools:showIn="@layout/activity_detail">
+    tools:context=".Content.ActivityDetail">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -41,6 +40,10 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         <TextView
             android:id="@+id/tv_deskripsi"
             android:layout_width="match_parent"
@@ -49,6 +52,16 @@
             android:lineSpacingExtra="8sp"
             />
 
+        <FrameLayout
+            android:layout_below="@+id/tv_deskripsi"
+            android:id="@+id/frame_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </FrameLayout>
+
+        </RelativeLayout>
     </android.support.v4.widget.NestedScrollView>
+
+
     
 </android.support.design.widget.CoordinatorLayout>

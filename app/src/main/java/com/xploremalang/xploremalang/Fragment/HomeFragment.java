@@ -110,14 +110,14 @@ return home;
     @Override
     public void onItemClick(int position) {
         IsiKonten isiKonten = mUpload.get(position);
-        String[] kontenData = {isiKonten.getJudul(),isiKonten.getDeskripsi(),isiKonten.getLatitude(),isiKonten.getLongtitude(),isiKonten.getNamaKonten(),isiKonten.getmImageUrl()};
+        String[] kontenData = {isiKonten.getJudul(),isiKonten.getDeskripsi(),isiKonten.getLatitude(),isiKonten.getLatitude(),isiKonten.getNamaKonten(),isiKonten.getmImageUrl()};
         openDetailActivity(kontenData);
     }
 
     @Override
     public void onShowItemClick(int position) {
         IsiKonten isiKonten = mUpload.get(position);
-        String[] kontenData = {isiKonten.getJudul(),isiKonten.getDeskripsi(),isiKonten.getLatitude(),isiKonten.getLongtitude(),isiKonten.getNamaKonten(),isiKonten.getmImageUrl()};
+        String[] kontenData = {isiKonten.getJudul(),isiKonten.getDeskripsi(),isiKonten.getLatitude(),isiKonten.getLatitude(),isiKonten.getNamaKonten(),isiKonten.getmImageUrl()};
         openDetailActivity(kontenData);
     }
 

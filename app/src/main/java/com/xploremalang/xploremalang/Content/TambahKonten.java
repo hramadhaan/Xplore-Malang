@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.webkit.MimeTypeMap;
@@ -56,6 +57,7 @@ public class TambahKonten extends AppCompatActivity {
     private ImageView view_image_home;
     private ProgressBar progress_home;
     private Uri mImageUri;
+    Toolbar toolbar_tambah_konten;
 
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
@@ -68,6 +70,8 @@ public class TambahKonten extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah_konten);
+
+
 
         pilihGambar = findViewById(R.id.btn_tambah_foto);
         uploadKonten = findViewById(R.id.btn_tambah_konten);
