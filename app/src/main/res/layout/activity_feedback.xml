@@ -5,25 +5,7 @@
     android:layout_width="405dp"
     android:layout_height="400dp"
     android:orientation="vertical"
-    android:layout_marginTop="10dp"
-    tools:context=".Feedback">
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar2"
-        app:title="Tulis Feedback"
-        app:titleMarginStart="125dp"
-        app:titleTextColor="@color/DeepSkyBlue"
-        android:layout_width="395dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="40dp"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
-
-
+    android:layout_marginTop="10dp">
 
     <TextView
         android:layout_width="wrap_content"

@@ -29,6 +29,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.xploremalang.xploremalang.Fragment.FragmentFeedback;
 import com.xploremalang.xploremalang.Fragment.HomeFragment;
 import com.xploremalang.xploremalang.R;
 import com.xploremalang.xploremalang.ulasan.FeedbackFragment;
@@ -69,7 +70,8 @@ public class ActivityDetail extends AppCompatActivity{
         mUsers = FirebaseDatabase.getInstance().getReference("konten");
         mUsers.push().setValue(marker);
 
-
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_feedback,
+                new FragmentFeedback()).commit();
 
         initializeWidgets();
 

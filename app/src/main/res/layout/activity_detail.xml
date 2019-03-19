@@ -54,10 +54,16 @@
 
         <FrameLayout
             android:layout_below="@+id/tv_deskripsi"
-            android:id="@+id/frame_detail"
+            android:id="@+id/frame_feedback"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="200dp">
         </FrameLayout>
+
+            <FrameLayout
+                android:layout_below="@+id/frame_feedback"
+                android:id="@+id/frame_diskusi"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"></FrameLayout>
 
         </RelativeLayout>
     </android.support.v4.widget.NestedScrollView>
