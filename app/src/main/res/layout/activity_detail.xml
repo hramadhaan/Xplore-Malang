@@ -52,8 +52,18 @@
             android:lineSpacingExtra="8sp"
             />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_lokasi"
+                android:layout_below="@id/tv_deskripsi"
+                android:text="Cari Lokasi"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                />
+
         <FrameLayout
-            android:layout_below="@+id/tv_deskripsi"
+            android:layout_below="@+id/btn_lokasi"
             android:id="@+id/frame_feedback"
             android:layout_width="match_parent"
             android:layout_height="200dp">
