@@ -12,9 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -22,7 +20,7 @@ import com.xploremalang.xploremalang.R;
 
 import java.util.HashMap;
 
-public class FeedbackFragment extends Fragment {
+public class DiskusiFeedback extends Fragment {
     EditText addComment;
     ImageView image_profile;
     TextView post;
@@ -35,7 +33,7 @@ public class FeedbackFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View feedback = inflater.inflate(R.layout.fragment_feedback,container,false);
+        View feedback = inflater.inflate(R.layout.fragment_diskusi,container,false);
 
         addComment = feedback.findViewById(R.id.add_comment);
         image_profile = feedback.findViewById(R.id.image_profile);

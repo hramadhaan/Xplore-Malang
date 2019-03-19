@@ -2,37 +2,21 @@ package com.xploremalang.xploremalang.Content;
 
 import android.content.Context;
 import android.content.Intent;
-import android.location.Location;
-import android.location.LocationListener;
-import android.support.annotation.NonNull;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
-import com.firebase.ui.auth.data.model.Resource;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.xploremalang.xploremalang.Fragment.FragmentFeedback;
-import com.xploremalang.xploremalang.Fragment.HomeFragment;
+import com.xploremalang.xploremalang.Fragment.FeedbackFragment;
 import com.xploremalang.xploremalang.R;
-import com.xploremalang.xploremalang.ulasan.FeedbackFragment;
+import com.xploremalang.xploremalang.ulasan.DiskusiFeedback;
 
 public class ActivityDetail extends AppCompatActivity{
 
@@ -71,7 +55,11 @@ public class ActivityDetail extends AppCompatActivity{
         mUsers.push().setValue(marker);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_feedback,
-                new FragmentFeedback()).commit();
+                new FeedbackFragment()).commit();
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_diskusi,
+                new DiskusiFeedback()).commit();
+
 
         initializeWidgets();
 

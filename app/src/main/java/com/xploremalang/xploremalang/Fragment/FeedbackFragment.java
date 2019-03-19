@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.xploremalang.xploremalang.R;
 
-public class FragmentFeedback extends Fragment {
+public class FeedbackFragment extends Fragment {
 
     @Nullable
     @Override
