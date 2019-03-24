@@ -182,7 +182,7 @@ public class Activity_Utama extends AppCompatActivity
                startActivity(about);
                break;
            case R.id.nav_logout:
-               Toast.makeText(Activity_Utama.this,"Ini Tombol Log Out",Toast.LENGTH_SHORT).show();
+               Toast.makeText(Activity_Utama.this,"Log Out",Toast.LENGTH_SHORT).show();
                mAuth.signOut();
                break;
        }

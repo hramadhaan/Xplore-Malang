@@ -50,13 +50,13 @@ public class LoginActivity extends AppCompatActivity {
 
         sudah = findViewById(R.id.sudah_punya_akun);
 
-//        sudah.setOnClickListener(new View.OnClickListener() {
-////            @Override
-////            public void onClick(View v) {
-////                Intent i = new Intent(LoginActivity.this,RegistrationActivity.class);
-////                startActivity(i);
-////            }
-//        });
+       sudah.setOnClickListener(new View.OnClickListener() {
+           @Override
+            public void onClick(View v) {
+               Intent i = new Intent(LoginActivity.this,RegisterAccount.class);
+               startActivity(i);
+            }
+        });
 
         submit_login = findViewById(R.id.button_login);
         submit_login.setOnClickListener(new View.OnClickListener() {

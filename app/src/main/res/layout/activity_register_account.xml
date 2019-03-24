@@ -1,74 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_register"
     tools:context=".AccountActivity.RegisterAccount">
 
-
-    <RelativeLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_registration"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_marginTop="40dp"
-            android:layout_centerHorizontal="true"
-            android:layout_width="290dp"
-            android:layout_height="120dp"
-            android:src="@drawable/putih"/>
-        <TextView
-            android:id="@+id/tv_register"
-            android:layout_marginTop="80dp"
-            android:gravity="center_horizontal"
-            android:layout_below="@+id/logo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Register"
-            android:textColor="#fff"
-            android:fontFamily="@font/gibson_bold"
-            android:textSize="25dp"/>
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:title="Xplore Malang"
 
-        <Button
-            android:layout_marginTop="40dp"
-            android:id="@+id/button_google"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/google"
-            android:elevation="30dp"
-            android:layout_below="@+id/tv_register"/>
-        <Button
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:id="@+id/button_facebook"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/facebook"
-            android:layout_below="@+id/button_google"
-            android:layout_marginTop="30dp"/>
-        <TextView
-            android:layout_marginRight="60dp"
-            android:gravity="right"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/button_facebook"
-            android:fontFamily="@font/gibson_regular"
-            android:textSize="14dp"
-            android:textColor="#fff"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Already have an account ?"/>
-<TextView
-    android:gravity="bottom|center"
-    android:layout_marginBottom="5dp"
-    android:text="XPLORE MALANG © 2019"
-    android:fontFamily="@font/gibson_regular"
-    android:textSize="7dp"
-    android:textColor="#fff"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
-    </RelativeLayout>
+        app:titleTextColor="@color/white"
+        android:elevation="20dp"></android.support.v7.widget.Toolbar>
 
-</android.support.constraint.ConstraintLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/registrasi_foto"
+        android:layout_width="100dp"
+        android:layout_marginTop="40dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/foto_bromo"
+        android:layout_below="@+id/toolbar_registration"/>
+
+    <EditText
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/registrasi_foto"
+        android:id="@+id/registrasi_nama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan Nama Panjang"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/registrasi_email"
+        android:layout_below="@id/registrasi_nama"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Masukkan Email"/>
+
+    <EditText
+        android:id="@+id/registrasi_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/registrasi_email"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:hint="Masukkan Password"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bregistrasi"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="60dp"
+        android:layout_below="@id/registrasi_password"
+        android:text="Submit"/>
+
+    <TextView
+        android:id="@+id/have_account"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/DeepSkyBlue"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/bregistrasi"
+        android:text="Already have an account ?"/>
+</RelativeLayout>
