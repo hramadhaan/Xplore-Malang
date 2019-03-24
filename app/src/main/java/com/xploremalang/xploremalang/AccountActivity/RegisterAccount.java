@@ -94,8 +94,8 @@ public class RegisterAccount extends AppCompatActivity {
 
                                     HashMap<String, Object> hashMap = new HashMap<>();
                                     hashMap.put("id", userid);
-                                    hashMap.put("nama", registration_nama);
-                                    hashMap.put("email", registration_email);
+                                    hashMap.put("nama", registration_nama.getText().toString());
+                                    hashMap.put("email", registration_email.getText().toString());
                                     hashMap.put("imageurl", "https://firebasestorage.googleapis.com/v0/b/xploremalangv2.appspot.com/o/profil%2Fg.png?alt=media&token=b308340a-d40a-4040-a038-04a6d5f1367f");
 
                                     reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
