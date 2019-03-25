@@ -13,17 +13,16 @@
 
     <ImageView
         android:id="@+id/imgView_iconWeather"
-        android:layout_width="191dp"
-        android:layout_height="141dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/icon_na" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textView_temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imgView_iconWeather"
+        android:layout_below="@id/imgView_iconWeather"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
         android:textSize="24sp"
@@ -35,7 +34,7 @@
         android:id="@+id/textView_condition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView_temperature"
+        android:layout_below="@id/textView_temperature"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="13dp"
         tools:text="Condition" />
@@ -44,7 +43,7 @@
         android:id="@+id/textView_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView_condition"
+        android:layout_below="@id/textView_condition"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
         android:textSize="18sp"

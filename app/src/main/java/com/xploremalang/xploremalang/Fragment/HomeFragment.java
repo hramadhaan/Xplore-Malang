@@ -1,6 +1,7 @@
 package com.xploremalang.xploremalang.Fragment;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -24,22 +26,31 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.xploremalang.xploremalang.BuildConfig;
 import com.xploremalang.xploremalang.Content.ActivityDetail;
 import com.xploremalang.xploremalang.Content.IsiKonten;
 import com.xploremalang.xploremalang.Content.TambahKonten;
 import com.xploremalang.xploremalang.Content.UploadListAdapter;
 import com.xploremalang.xploremalang.R;
 import com.xploremalang.xploremalang.UploadFoto.ImageAdapter;
+import com.xploremalang.xploremalang.Utilities.ServiceHelper;
+import com.xploremalang.xploremalang.Utilities.WeatherEndpoint;
+import com.xploremalang.xploremalang.Weather.data.OpenWeatherMap;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeFragment extends Fragment implements UploadListAdapter.OnItemClickListener{
 
     private UploadListAdapter.OnItemClickListener listener;
     private RecyclerView mRecyclerView;
     private UploadListAdapter mAdapter;
-
+    private WeatherEndpoint helper = new ServiceHelper().getWeatherService();
     private ProgressBar mProgressBar;
 
     private DatabaseReference mDatabaseRef;
@@ -63,7 +74,7 @@ public class HomeFragment extends Fragment implements UploadListAdapter.OnItemCl
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View home = inflater.inflate(R.layout.fragment_home,container,false);
 
-        FloatingActionButton fab_home = (FloatingActionButton) home.findViewById(R.id.floating_home);
+        FloatingActionButton fab_home = home.findViewById(R.id.floating_home);
         fab_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +85,6 @@ public class HomeFragment extends Fragment implements UploadListAdapter.OnItemCl
         });
 
         listener = this;
-
         mRecyclerView = home.findViewById(R.id.rv_home);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -135,4 +145,5 @@ return home;
             }
         });
     }
+
 }

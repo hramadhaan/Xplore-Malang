@@ -29,7 +29,7 @@
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"></android.support.v7.widget.Toolbar>
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"/>
             
         </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -38,6 +38,7 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="16dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <RelativeLayout
@@ -66,14 +67,14 @@
             android:layout_below="@+id/btn_lokasi"
             android:id="@+id/frame_feedback"
             android:layout_width="match_parent"
-            android:layout_height="200dp">
+            android:layout_height="wrap_content">
         </FrameLayout>
 
             <FrameLayout
                 android:layout_below="@+id/frame_feedback"
                 android:id="@+id/frame_diskusi"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"></FrameLayout>
+                android:layout_height="wrap_content"/>
 
         </RelativeLayout>
     </android.support.v4.widget.NestedScrollView>

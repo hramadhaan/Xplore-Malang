@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/root_fragment_home"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <Spinner
-        android:id="@+id/spinner_home"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:entries="@array/kontenNama"
-        android:layout_centerHorizontal="true"></Spinner>
+
+    <RelativeLayout
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
+        android:id="@+id/root_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Spinner
+            android:id="@+id/spinner_home"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/kontenNama" />
+    </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/spinner_home"></android.support.v7.widget.RecyclerView>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/root_spinner"/>
 
     <ProgressBar
         android:id="@+id/barProgressHome"
@@ -33,14 +38,14 @@
         android:visibility="gone"/>
 
     <android.support.design.widget.FloatingActionButton
-        android:layout_marginRight="20dp"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/floating_home"
+        app:fab_size="mini"
         app:fab_colorNormal="@color/pink"
         app:fab_colorPressed="@color/pink_pressed"
-        app:fab_icon="@drawable/ic_add_black_24dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"        />
+        app:fab_icon="@drawable/ic_add_black_24dp" />
 </RelativeLayout>
-</LinearLayout>

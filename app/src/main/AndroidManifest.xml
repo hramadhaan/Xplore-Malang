@@ -33,6 +33,7 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".Content.ActivityDetail" />
+        <activity android:name=".Weather.data.MainActivity_weather"/>
         <activity android:name=".Content.TambahKonten"
             android:parentActivityName=".Activity_Utama"/>
         <activity

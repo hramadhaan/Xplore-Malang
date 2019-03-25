@@ -34,6 +34,7 @@ import com.xploremalang.xploremalang.AccountActivity.LoginActivity;
 import com.xploremalang.xploremalang.Fragment.FeedFragment;
 import com.xploremalang.xploremalang.Fragment.HomeFragment;
 import com.xploremalang.xploremalang.Fragment.ProfileFragment;
+import com.xploremalang.xploremalang.Weather.data.MainActivity_weather;
 
 public class Activity_Utama extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -180,6 +181,10 @@ public class Activity_Utama extends AppCompatActivity
                Toast.makeText(Activity_Utama.this,"Ini Tombol About Us",Toast.LENGTH_SHORT).show();
                Intent about = new Intent(Activity_Utama.this,about.class);
                startActivity(about);
+               break;
+
+           case R.id.nav_send:
+               startActivity(new Intent(Activity_Utama.this, MainActivity_weather.class));
                break;
            case R.id.nav_logout:
                Toast.makeText(Activity_Utama.this,"Log Out",Toast.LENGTH_SHORT).show();

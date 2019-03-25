@@ -2,10 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="405dp"
-    android:layout_height="400dp"
-    android:orientation="vertical"
-    android:layout_marginTop="10dp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
@@ -17,12 +16,6 @@
         android:id="@+id/Wisata1"
         android:textSize="20dp"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        />
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
@@ -32,6 +25,18 @@
         android:rating="2.0"
         android:stepSize="1.0" />
 
+    <EditText
+        android:hint="Enter you review"
+        android:gravity="top|start"
+        android:lines="4"
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        tools:ignore="HardcodedText" />
+
+
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
@@ -40,12 +45,6 @@
         android:layout_marginLeft="30dp"
         android:textColor="@color/white"
         android:background="@color/com_facebook_messenger_blue"
-        android:text="INPUT FEEDBACK" />
-
-
-
-
-
-
-
+        android:text="Input Feedback"
+        tools:ignore="HardcodedText" />
 </LinearLayout>
