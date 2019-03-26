@@ -1,5 +1,6 @@
 package com.xploremalang.xploremalang.UploadFoto;
 
+import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
@@ -18,8 +19,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -30,63 +35,48 @@ import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 import com.xploremalang.xploremalang.Activity_Utama;
 import com.xploremalang.xploremalang.R;
+import com.xploremalang.xploremalang.Weather.data.Sys;
+
+import java.util.HashMap;
 
 public class UploadActivity extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
+    Uri imageUri;
+    String myUrl = "";
+    StorageTask uploadTask;
+    StorageReference storageReference;
 
-    private Button mButtonChooseImage;
-    private Button mButtonUpload;
-    private TextView mTextViewShowUploads;
-    private EditText mEditTextFileName;
-    private ImageView mImageView;
-    private ProgressBar mProgressBar;
-
-    private Uri mImageUri;
-    private StorageReference mStorageRef;
-    private DatabaseReference mDatabaseRef;
-
-    private StorageTask mUploadTask;
+    ImageView imageUpload;
+    EditText description;
+    Button btnGambar, btnUpload;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload);
 
-        mButtonChooseImage = findViewById(R.id.btn_file);
-        mButtonUpload = findViewById(R.id.btn_upload);
-        mTextViewShowUploads = findViewById(R.id.text_view_show_uploads);
-        mEditTextFileName = findViewById(R.id.description);
-        mImageView = findViewById(R.id.imageUpload);
-        mProgressBar = findViewById(R.id.progress_bar);
+        imageUpload = findViewById(R.id.imageUpload);
+        description = findViewById(R.id.description);
+        btnGambar = findViewById(R.id.btn_file);
+        btnUpload = findViewById(R.id.btn_upload);
 
-        mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
+        storageReference = FirebaseStorage.getInstance().getReference("feed");
 
-        mButtonChooseImage.setOnClickListener(new View.OnClickListener() {
+        btnUpload.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                uploadFile();
+            }
+        });
+
+        btnGambar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openFileChooser();
             }
         });
 
-        mButtonUpload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mUploadTask != null && mUploadTask.isInProgress()) {
-                    Toast.makeText(UploadActivity.this,"Upload in progress", Toast.LENGTH_SHORT).show();
-                } else {
-                    uploadFile();
-                }
-            }
-        });
-
-        mTextViewShowUploads.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openImagesActivity();
-            }
-        });
     }
 
     private void openFileChooser() {
@@ -96,69 +86,76 @@ public class UploadActivity extends AppCompatActivity {
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
 
+    private void uploadFile() {
+
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
+
+        if (imageUri != null){
+            final StorageReference fileReference = storageReference.child(System.currentTimeMillis()+"."+getFileExtension(imageUri));
+            uploadTask = fileReference.putFile(imageUri);
+            uploadTask.continueWithTask(new Continuation() {
+                @Override
+                public Object then(@NonNull Task task) throws Exception {
+                    if (!task.isComplete()) {
+                        throw task.getException();
+                    }
+                    return fileReference.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()){
+                        Uri downloadUri = task.getResult();
+                        myUrl = downloadUri.toString();
+                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("feed");
+                        String postid = reference.push().getKey();
+
+                        HashMap<String, Object> hashMap = new HashMap<>();
+                        hashMap.put("postid",postid);
+                        hashMap.put("postImage",myUrl);
+                        hashMap.put("description",description.getText().toString());
+                        hashMap.put("publisher", FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+                        reference.child(postid).setValue(hashMap);
+
+                        progressDialog.dismiss();
+                        startActivity(new Intent(UploadActivity.this,Activity_Utama.class));
+                        finish();
+                    } else {
+                        Toast.makeText(UploadActivity.this,"Failed...",Toast.LENGTH_LONG).show();
+                    }
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(UploadActivity.this,e.getMessage(),Toast.LENGTH_LONG);
+                }
+            });
+        } else {
+            Toast.makeText(UploadActivity.this,"No Image Selected",Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    private String getFileExtension(Uri uri) {
+        ContentResolver contentResolver = getContentResolver();
+        MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
+        return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri));
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data !=null && data.getData() != null){
-          mImageUri = data.getData();
-            Glide.with(this).load(mImageUri).into(mImageView);
+            imageUri = data.getData();
+            Glide.with(this).load(imageUri).into(imageUpload);
+        } else {
+            Toast.makeText(UploadActivity.this,"Something gone wrong",Toast.LENGTH_SHORT).show();
         }
-    }
-
-    private String getFileExtension(Uri uri){
-        ContentResolver cR = getContentResolver();
-        MimeTypeMap mime = MimeTypeMap.getSingleton();
-        return mime.getExtensionFromMimeType(cR.getType(uri));
-    }
-
-    private void uploadFile() {
-        if (mImageUri != null){
-            final StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()+"."+getFileExtension(mImageUri));
-            mStorageRef.getDownloadUrl();
-            mUploadTask = fileReference.putFile(mImageUri)
-                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Handler handler = new Handler();
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    mProgressBar.setProgress(0);
-                                }
-                            },5000);
-
-                            fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                @Override
-                                public void onSuccess(Uri uri) {
-                                    Toast.makeText(UploadActivity.this,"Upload Succesfull",Toast.LENGTH_LONG).show();
-                                    Upload upload = new Upload(mEditTextFileName.getText().toString().trim(),
-                                            uri.toString());
-                                    String uploadId = mDatabaseRef.push().getKey();
-                                    mDatabaseRef.child(uploadId).setValue(upload);
-                                }
-                            });
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(UploadActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                            double progress = (100.0*taskSnapshot.getBytesTransferred()/taskSnapshot.getTotalByteCount());
-                            mProgressBar.setProgress((int) progress);
-                        }
-                    });
-        }else {
-            Toast.makeText(this,"No file selected",Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void openImagesActivity(){
-    Intent intent = new Intent(this, Activity_Utama.class);
-    startActivity(intent);
     }
 }
+
+
+
