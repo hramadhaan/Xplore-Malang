@@ -10,6 +10,9 @@ import android.widget.TextView;
 import android.widget.RatingBar.OnRatingBarChangeListener;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Feedback extends AppCompatActivity {
     private RatingBar ratingBar;
     private TextView txtRatingValue;
@@ -23,6 +26,9 @@ public class Feedback extends AppCompatActivity {
             addListenerOnRatingBar();
             addListenerOnButton();
 
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference rating = database.getReference("rating");
+            rating.setValue(0);
         }
 
 

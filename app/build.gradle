@@ -9,8 +9,8 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        buildConfigField "String","BASE_URL", "\"https://api.openweathermap.org/data/2.5/\""
-        buildConfigField "String","API_KEY", "\"8982e78ec1526abf095193a054e4c277\""
+        buildConfigField "String", "BASE_URL", "\"https://api.openweathermap.org/data/2.5/\""
+        buildConfigField "String", "API_KEY", "\"8982e78ec1526abf095193a054e4c277\""
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
