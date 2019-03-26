@@ -20,6 +20,11 @@
             app:title="Edit Profile"
             android:textAlignment="center">
 
+
+
+
+
+
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
