@@ -9,6 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="88eeda94-503c-4e7a-8efe-560984807a8d" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Comment/Comment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Comment/CommentAdapter.java" afterDir="false" />
@@ -72,6 +73,15 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
 >>>>>>> origin/ilhamsatria
+=======
+    <list default="true" id="9f0eb8a0-baed-4736-af95-5e694d5840ed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Weather/data/MainActivity_weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Weather/data/MainActivity_weather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_weather.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_weather.xml" afterDir="false" />
+>>>>>>> origin/rizkafadhilah
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +97,17 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="xplore-malang" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -145,18 +165,64 @@
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
+<<<<<<< HEAD
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="218" />
           <entry key="txt" value="4" />
           <entry key="xml" value="86" />
+=======
+    </session>
+    <session id="1510801951">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="gradle" value="6" />
+          <entry key="java" value="26" />
+          <entry key="xml" value="22" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Groovy" value="6" />
+          <entry key="JAVA" value="26" />
+          <entry key="XML" value="22" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="gradle" value="120" />
+          <entry key="java" value="2825" />
+          <entry key="txt" value="4" />
+          <entry key="xml" value="955" />
+>>>>>>> origin/rizkafadhilah
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="JAVA" value="218" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="XML" value="86" />
+=======
+          <entry key="Groovy" value="120" />
+          <entry key="JAVA" value="2825" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="XML" value="955" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="2088858811">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="3" />
+>>>>>>> origin/rizkafadhilah
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -176,15 +242,23 @@
     <leaf>
       <file pinned="false" current-in-tab="false">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/row_model.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="67">
               <caret line="53" column="48" lean-forward="true" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
+=======
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Weather/data/OpenWeatherMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1173">
+              <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
+>>>>>>> origin/rizkafadhilah
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Content/MapsFragment.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -196,11 +270,20 @@
             <state relative-caret-position="153">
               <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
 >>>>>>> origin/ilhamsatria
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_weather.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+>>>>>>> origin/rizkafadhilah
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Content/TambahKonten.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -242,18 +325,36 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="380">
               <caret line="59" column="37" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
+=======
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity__utama_drawer.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+>>>>>>> origin/rizkafadhilah
             </state>
           </provider>
           <provider editor-type-id="android-manifest" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Content/UploadListAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1598">
               <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
+=======
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Weather/data/MainActivity_weather.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1403#1440#1" expanded="true" />
+                <element signature="e#1468#1505#1" expanded="true" />
+>>>>>>> origin/rizkafadhilah
               </folding>
 =======
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/edit_profil.xml">
@@ -265,6 +366,7 @@
           <provider editor-type-id="android-designer2" />
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -290,6 +392,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/google-services.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+>>>>>>> origin/rizkafadhilah
             </state>
           </provider>
         </entry>
@@ -2698,8 +2807,12 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Activity_Utama.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Fragment/HomeFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_weather.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Weather/data/MainActivity_weather.java" />
+=======
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+>>>>>>> origin/rizkafadhilah
         <option value="$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Feedback.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_fragment_rating.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_rating.xml" />
@@ -2710,11 +2823,16 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Fragment/PariwisataFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Fragment/KulinerFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Fragment/OleholehFragment.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/AccountActivity/LoginActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" />
 >>>>>>> origin/ilhamsatria
+=======
+        <option value="$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Weather/data/MainActivity_weather.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_weather.xml" />
+>>>>>>> origin/rizkafadhilah
       </list>
     </option>
   </component>
@@ -2731,17 +2849,21 @@
     <panes>
       <pane id="Scope" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
 =======
       <pane id="PackagesPane" />
       <pane id="ProjectPane" />
 >>>>>>> origin/ilhamsatria
+=======
+>>>>>>> origin/rizkafadhilah
       <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
               <item name="xplore-malang" type="1abcf292:AndroidViewProjectNode" />
+<<<<<<< HEAD
               <item name="app" type="e9137016:NonAndroidModuleNode" />
             </path>
             <path>
@@ -2786,32 +2908,79 @@
               <item name="Xplore Malang" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
+=======
+              <item name="app" type="feadf853:AndroidModuleNode" />
             </path>
             <path>
-              <item name="Xplore Malang" type="1abcf292:AndroidViewProjectNode" />
+              <item name="xplore-malang" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="xplore-malang" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="xploremalang" type="cbb59c9e:AndroidPsiDirectoryNode" />
+>>>>>>> origin/rizkafadhilah
+            </path>
+            <path>
+              <item name="xplore-malang" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+<<<<<<< HEAD
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
+=======
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="xploremalang" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+>>>>>>> origin/rizkafadhilah
             </path>
             <path>
-              <item name="Xplore Malang" type="1abcf292:AndroidViewProjectNode" />
+              <item name="xplore-malang" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
+<<<<<<< HEAD
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="Xplore Malang" type="1abcf292:AndroidViewProjectNode" />
 >>>>>>> origin/ilhamsatria
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+=======
+            </path>
+            <path>
+              <item name="xplore-malang" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="xplore-malang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xplore-malang" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="xplore-malang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xplore-malang" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+>>>>>>> origin/rizkafadhilah
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+<<<<<<< HEAD
 <<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
 =======
@@ -2819,6 +2988,11 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/kuliah/aaa/Modul4" />
 >>>>>>> origin/ilhamsatria
+=======
+    <property name="device.picker.selection" value="Pixel_XL_API_28" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> origin/rizkafadhilah
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
@@ -2914,7 +3088,11 @@
   </component>
   <component name="ToolWindowManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+=======
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+>>>>>>> origin/rizkafadhilah
     <editor active="true" />
 =======
     <frame x="-7" y="23" width="1550" height="848" extended-state="6" />
@@ -2949,10 +3127,17 @@
       <window_info id="Build Variants" order="2" sideWeight="0.50163937" side_tool="true" weight="0.24054463" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Capture Tool" order="4" />
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49836066" visible="true" weight="0.21073826" />
       <window_info id="Image Layers" order="6" />
       <window_info id="Structure" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="0" sideWeight="0.64826024" visible="true" weight="0.32307693" />
+=======
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49836066" visible="true" weight="0.23238866" />
+      <window_info id="Image Layers" order="6" />
+      <window_info id="Structure" order="7" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Build" order="0" sideWeight="0.64826024" visible="true" weight="0.06227758" />
+>>>>>>> origin/rizkafadhilah
       <window_info anchor="bottom" id="Run" order="1" sideWeight="0.733124" weight="0.33442622" />
       <window_info anchor="bottom" id="Android Profiler" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.3517398" side_tool="true" weight="0.32786885" />
@@ -2968,8 +3153,12 @@
       <window_info anchor="right" id="Gradle" order="2" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
+<<<<<<< HEAD
       <window_info active="true" anchor="right" id="Preview" order="5" visible="true" weight="0.3181208" />
 >>>>>>> origin/ilhamsatria
+=======
+      <window_info anchor="right" id="Preview" order="5" visible="true" weight="0.31821862" />
+>>>>>>> origin/rizkafadhilah
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2984,7 +3173,13 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Utilities/ServiceHelper.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Weather/data/Main.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Utilities/WeatherEndpoint.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Weather/data/OpenWeatherMap.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Weather/data/OpenWeatherMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Weather/data/Weather.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/SplashScreen.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3049,8 +3244,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity__utama_drawer.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+        <state relative-caret-position="187">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
@@ -3088,6 +3283,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-731">
           <caret line="50" column="39" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
+<<<<<<< HEAD
         </state>
       </provider>
     </entry>
@@ -3103,6 +3299,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
+=======
+>>>>>>> origin/rizkafadhilah
         </state>
       </provider>
     </entry>
@@ -3251,7 +3449,20 @@
     </entry>
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+<<<<<<< HEAD
 =======
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+          <folding>
+            <element signature="e#658#676#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+>>>>>>> origin/rizkafadhilah
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_oleh2_piamangkok.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -3291,6 +3502,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Content/UploadListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state relative-caret-position="-1598">
           <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
@@ -3300,6 +3512,10 @@
         <state relative-caret-position="3043">
           <caret line="179" selection-start-line="179" selection-end-line="179" />
 >>>>>>> origin/ilhamsatria
+=======
+        <state relative-caret-position="3043">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
+>>>>>>> origin/rizkafadhilah
         </state>
       </provider>
     </entry>
@@ -3311,7 +3527,10 @@
 =======
         <state relative-caret-position="464">
           <caret line="161" column="35" selection-start-line="161" selection-start-column="35" selection-end-line="161" selection-end-column="35" />
+<<<<<<< HEAD
 >>>>>>> origin/ilhamsatria
+=======
+>>>>>>> origin/rizkafadhilah
         </state>
       </provider>
     </entry>
@@ -3326,6 +3545,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -3353,6 +3573,16 @@
           <caret line="32" column="64" selection-start-line="32" selection-start-column="64" selection-end-line="32" selection-end-column="64" />
           <folding>
             <element signature="e#1428#1461#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Weather/data/MainActivity_weather.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1403#1440#1" expanded="true" />
+            <element signature="e#1468#1505#1" expanded="true" />
+>>>>>>> origin/rizkafadhilah
           </folding>
 >>>>>>> origin/ilhamsatria
         </state>
@@ -3381,6 +3611,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xploremalang/xploremalang/Comment/Comment_Activity.java">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_weather.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

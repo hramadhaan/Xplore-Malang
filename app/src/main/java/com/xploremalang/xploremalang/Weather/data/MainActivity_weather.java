@@ -41,7 +41,7 @@ public class MainActivity_weather extends AppCompatActivity {
                         if (result!=null){
                             ((TextView)findViewById(R.id.textView_condition)).setText(result.getWeatherList().get(0).getDescription());
                             ((TextView)findViewById(R.id.textView_location)).setText(result.getName());
-                            ((TextView)findViewById(R.id.textView_temperature)).setText(result.getMain().getTemp()+" C °");
+                            ((TextView)findViewById(R.id.textView_temperature)).setText((result.getMain().getTemp()-273)+" C °");
                             Glide.with(MainActivity_weather.this).load(String.format("http://openweathermap.org/img/w/%s.png", result.getWeatherList().get(0).getIcon()))
                                     .into(weatherIcon);
                         }else {
