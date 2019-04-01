@@ -13,24 +13,69 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/foto_row"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="10dp"
-            android:src="@drawable/foto_bromo"
-            tools:ignore="ContentDescription" />
+            android:id="@+id/image_model"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/foto_bromo"/>
+        <LinearLayout
+            android:id="@+id/l_model"
+            android:layout_below="@id/image_model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/like_model"
+                android:src="@drawable/ic_heart"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/comment_model"
+                android:src="@drawable/ic_comment"
+                android:layout_marginLeft="5dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/location_model"
+                android:src="@drawable/ic_location"
+                android:layout_marginLeft="5dp"/>
+
+        </LinearLayout>
 
         <TextView
-            android:text="Bromo"
-            android:textSize="22sp"
-            android:fontFamily="@font/gibson_regular"
-            android:textColor="@color/black_semi_transparent"
-            android:id="@+id/text_row"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/foto_row"
-            android:layout_alignBaseline="@id/foto_row"
-            tools:ignore="HardcodedText" />
+            android:id="@+id/count_like"
+            android:text="10 likes"
+            android:textStyle="bold"
+            android:layout_below="@id/l_model"/>
+
+        <TextView
+            android:layout_marginTop="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wisata_model"
+            android:layout_below="@id/count_like"
+            android:text="Tempat Wisata"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/count_comment"
+            android:layout_below="@id/wisata_model"
+            android:text="View All 20 Comment"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/deskripsi_model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/count_comment"
+            android:text="asdasdadadasdasdadasdkjhadkjhafdkjhsdjfhksdjfhksdjfhksaasd"/>
 
     </RelativeLayout>
 

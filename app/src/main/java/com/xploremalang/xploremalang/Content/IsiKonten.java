@@ -5,50 +5,49 @@ import android.text.Editable;
 import com.google.firebase.database.Exclude;
 
 public class IsiKonten {
-    String judul;
-    String deskripsi;
-    String latitude;
-    String longtitude;
-    String namaKonten;
-    String mImageUrl;
-    private int position;
-    private String key;
+    private String postId;
+    private String postImage;
+    private String description;
+    private String latitude;
+    private String longtitude;
+    private String publisher;
+    private String wisata;
 
-    public IsiKonten(){
-//        adsa
-    }
-
-    public IsiKonten (int position) {
-        this.position = position;
-    }
-
-    public IsiKonten(String judul, String deskripsi, String latitude, String longtitude, String mImageUrl, String namaKonten){
-        if (judul.trim().equals("")){
-            judul = "Tidak Ada Judul";
-        }
-        this.judul = judul;
-        this.deskripsi = deskripsi;
+    public IsiKonten(String postId, String postImage, String description, String latitude, String longtitude, String publisher, String wisata) {
+        this.postId = postId;
+        this.postImage = postImage;
+        this.description = description;
         this.latitude = latitude;
         this.longtitude = longtitude;
-        this.mImageUrl = mImageUrl;
-        this.namaKonten = namaKonten;
-
+        this.publisher = publisher;
+        this.wisata = wisata;
     }
 
-    public String getJudul() {
-        return judul;
+    public IsiKonten() {
     }
 
-    public void setJudul (String judul){
-        this.judul = judul;
+    public String getPostId() {
+        return postId;
     }
 
-    public String getDeskripsi() {
-        return deskripsi;
+    public void setPostId(String postId) {
+        this.postId = postId;
     }
 
-    public void setDeskripsi(String deskripsi) {
-        this.deskripsi = deskripsi;
+    public String getPostImage() {
+        return postImage;
+    }
+
+    public void setPostImage(String postImage) {
+        this.postImage = postImage;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getLatitude() {
@@ -67,30 +66,19 @@ public class IsiKonten {
         this.longtitude = longtitude;
     }
 
-    public String getNamaKonten() {
-        return namaKonten;
+    public String getPublisher() {
+        return publisher;
     }
 
-    public void setNamaKonten(String namaKonten) {
-        this.namaKonten = namaKonten;
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
     }
 
-    public String getmImageUrl() {
-        return mImageUrl;
+    public String getWisata() {
+        return wisata;
     }
 
-    public void setmImageUrl(String mImageUrl) {
-        this.mImageUrl = mImageUrl;
+    public void setWisata(String wisata) {
+        this.wisata = wisata;
     }
-
-    @Exclude
-    public String getKey(){
-        return key;
-    }
-
-    @Exclude
-    public void setKey(String key){
-        this.key = key;
-    }
-
 }

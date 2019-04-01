@@ -28,7 +28,7 @@ public class ActivityDetail extends AppCompatActivity{
     CollapsingToolbarLayout mToolbar = null;
     String mId_company = null;
 
-//    INISIALISASI FEEDBACK
+    //    INISIALISASI FEEDBACK
     String postId;
     String publisherId;
 
