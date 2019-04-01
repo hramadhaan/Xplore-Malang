@@ -2,17 +2,31 @@ package com.xploremalang.xploremalang.AccountActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.facebook.Profile;
+import com.facebook.ProfileTracker;
 
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -27,7 +41,16 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.xploremalang.xploremalang.Activity_Utama;
+import com.xploremalang.xploremalang.MainActivity;
 import com.xploremalang.xploremalang.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -43,6 +66,10 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     TextView sudah;
 
+    CallbackManager callbackManager;
+    LoginButton loginButton;
+    ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,11 +77,90 @@ public class LoginActivity extends AppCompatActivity {
 
         sudah = findViewById(R.id.sudah_punya_akun);
 
-       sudah.setOnClickListener(new View.OnClickListener() {
-           @Override
+        callbackManager = CallbackManager.Factory.create();
+
+        loginButton = (LoginButton) findViewById(R.id.login_button);
+        loginButton.setReadPermissions("email","public_profile");
+        // If using in a fragment
+        //loginButton.setActivity(MainActivity.this);
+
+        ProfileTracker profileTracker = new ProfileTracker() {
+            @Override
+            protected void onCurrentProfileChanged(Profile oldProfile, Profile currentProfile) {
+
+            }
+        };
+
+        // Callback registration
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                // App code
+                progressDialog = new ProgressDialog(LoginActivity.this);
+                progressDialog.setMessage("Retrieving Data...");
+                progressDialog.show();
+                Profile profile = Profile.getCurrentProfile();
+
+                String accesstoken = loginResult.getAccessToken().getToken();
+
+
+                GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+                    @Override
+                    public void onCompleted(JSONObject object, GraphResponse response) {
+                        progressDialog.dismiss();
+
+                        Log.d("response", response.toString());
+                        try {
+                            Toast.makeText(getApplicationContext(), "Hi, " + object.getString("name"), Toast.LENGTH_LONG).show();
+                        } catch(JSONException ex) {
+                            ex.printStackTrace();
+                        }
+                        getData(object);
+
+
+                    }
+                });
+
+                //Request Graph API
+                Bundle parameters = new Bundle();
+                parameters.putString("field", "id,name,email,birthday,friend");
+                request.setParameters(parameters);
+                request.executeAsync();
+            }
+
+
+            @Override
+            public void onCancel() {
+                // App code
+
+            }
+
+            @Override
+            public void onError(FacebookException exception) {
+                // App code
+            }
+
+
+        });
+        if (AccessToken.getCurrentAccessToken() != null) {
+            //Set User ID
+            Toast.makeText(this,AccessToken.getCurrentAccessToken().getUserId(), Toast.LENGTH_SHORT).show();
+
+
+
+            Intent intent = new Intent(this, Activity_Utama.class);
+            startActivity(intent);
+            finish();
+
+
+        }
+        printKeyHash();
+
+        sudah.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
-               Intent i = new Intent(LoginActivity.this,RegisterAccount.class);
-               startActivity(i);
+                Intent i = new Intent(LoginActivity.this,RegisterAccount.class);
+                startActivity(i);
             }
         });
 
@@ -124,7 +230,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this,"Login Succes..",Toast.LENGTH_SHORT).show();
                             } else {
                                 Log.e("ERROR",task.getException().toString());
-                                Toast.makeText(LoginActivity.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this,"Erornya disini"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -145,6 +251,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode,int resultCode, Intent data){
         super.onActivityResult(requestCode,resultCode,data);
+        callbackManager.onActivityResult(requestCode,resultCode,data);
 
         if(requestCode == RC_SIGN_IN){
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
@@ -156,6 +263,7 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         }
+
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
@@ -172,6 +280,39 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void getData (JSONObject object){
+        try {
+            URL profile_picture = new URL("https://graph.facebook.com/" + object.getString("id") + "/picture?width=250&height=250");
+
+            //Glide.with(this).load(profile_picture.toString()).into(img_avatar);
+            Toast.makeText(this, "" + object.getString("email"), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "" +object.getString(""), Toast.LENGTH_SHORT).show();
+            //txt_email.setText(object.getString("email"));
+            //txt_birthdate.setText(object.getString("birthday"));
+            //txt_friend.setText("Friends: " + object.getJSONObject("friends").getJSONObject("summary").getString("total_count"));
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void printKeyHash() {
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo("com.xploremalang.xploremalang", PackageManager.GET_SIGNATURES);
+            for (Signature signature:info.signatures){
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash", Base64.encodeToString(md.digest(),Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
     }
 
 }
