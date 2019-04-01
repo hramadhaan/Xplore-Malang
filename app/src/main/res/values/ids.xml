@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="comment_item_image_profile" type="id" />
+    <item name="comment_item_username" type="id" />
+    <item name="comment_item_comment" type="id" />
+</resources>
