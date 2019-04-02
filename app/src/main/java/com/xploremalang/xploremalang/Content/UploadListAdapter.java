@@ -3,6 +3,7 @@ package com.xploremalang.xploremalang.Content;
 import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -27,6 +28,7 @@ import com.xploremalang.xploremalang.Comment.Comment_Activity;
 import com.xploremalang.xploremalang.R;
 
 import java.util.List;
+import java.util.Locale;
 
 public class UploadListAdapter extends RecyclerView.Adapter<UploadListAdapter.ImageViewHolder>{
 
@@ -101,6 +103,20 @@ public class UploadListAdapter extends RecyclerView.Adapter<UploadListAdapter.Im
             }
         });
 
+        imageViewHolder.locations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String lat = uploadCurrent.getLatitude();
+                String longs = uploadCurrent.getLongtitude();
+                double lo = Double.valueOf(longs.trim()).doubleValue();
+                double lats = Double.valueOf(lat.trim()).doubleValue();
+                String wis = uploadCurrent.getWisata();
+                String geoUri = "http://maps.google.com/maps?q=loc:" + lats + "," + lo + " (" + wis + ")";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(geoUri));
+                mContext.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -110,7 +126,7 @@ public class UploadListAdapter extends RecyclerView.Adapter<UploadListAdapter.Im
 
     public class ImageViewHolder extends RecyclerView.ViewHolder{
 
-        public ImageView image_model,likes,comment;
+        public ImageView image_model,likes,comment,locations;
         public TextView wisata_model,deskripsi_model,count_like,count_comment;
 
         public ImageViewHolder(@NonNull View itemView) {
@@ -123,6 +139,7 @@ public class UploadListAdapter extends RecyclerView.Adapter<UploadListAdapter.Im
             likes = itemView.findViewById(R.id.like_model);
             comment = itemView.findViewById(R.id.comment_model);
             count_comment = itemView.findViewById(R.id.count_comment);
+            locations = itemView.findViewById(R.id.location_model);
 
         }
     }
