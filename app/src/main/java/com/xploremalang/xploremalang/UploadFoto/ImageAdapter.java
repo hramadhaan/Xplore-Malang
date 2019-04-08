@@ -1,8 +1,6 @@
 package com.xploremalang.xploremalang.UploadFoto;
 
 import android.content.Context;
-import android.media.Image;
-import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,8 +12,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.squareup.picasso.Picasso;
 import com.xploremalang.xploremalang.R;
 
 import java.util.List;
@@ -68,7 +64,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewhol
         public ImageViewholder(View itemView){
             super(itemView);
 
-            DisplayName = itemView.findViewById(R.id.user_name);
+            DisplayName = itemView.findViewById(R.id.user_email);
             ProfilePicture = itemView.findViewById(R.id.image_user);
             textViewName = itemView.findViewById(R.id.tv_description);
             imageView = itemView.findViewById(R.id.iv_upload);

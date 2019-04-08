@@ -150,7 +150,7 @@ public class UploadListAdapter extends RecyclerView.Adapter<UploadListAdapter.Im
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                count_comment.setText("View all"+dataSnapshot.getChildrenCount()+"comments");
+                count_comment.setText("View all "+dataSnapshot.getChildrenCount()+" comments");
             }
 
             @Override

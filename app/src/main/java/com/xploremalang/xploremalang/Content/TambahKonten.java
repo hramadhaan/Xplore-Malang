@@ -63,7 +63,6 @@ public class TambahKonten extends AppCompatActivity {
     Spinner spinner_konten;
     ImageView image_added;
 
-    ProgressBar progress_home;
     Uri mImageUri;
     String myUri = "";
     StorageReference storageReference;
@@ -80,7 +79,6 @@ public class TambahKonten extends AppCompatActivity {
         et_latitude = findViewById(R.id.et_latitude);
         et_longtitude = findViewById(R.id.et_longtitude);
         image_added = findViewById(R.id.view_gambar_home);
-        progress_home = findViewById(R.id.progress_home);
         spinner_konten = findViewById(R.id.spinner_konten);
 
         storageReference = FirebaseStorage.getInstance().getReference("Konten");

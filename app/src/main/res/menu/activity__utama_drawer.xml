@@ -25,7 +25,7 @@
         <menu>
             <item
                 android:id="@+id/nav_send"
-                android:title="Cek Lokasi" />
+                android:title="Cek Cuaca" />
         </menu>
     </item>
 

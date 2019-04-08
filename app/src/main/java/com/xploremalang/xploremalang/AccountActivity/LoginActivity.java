@@ -148,11 +148,9 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-            Intent intent = new Intent(this, Activity_Utama.class);
-            startActivity(intent);
-            finish();
-
-
+//            Intent intent = new Intent(this, Activity_Utama.class);
+//            startActivity(intent);
+//            finish();
         }
         printKeyHash();
 
@@ -177,6 +175,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()!=null){
                     startActivity(new Intent(LoginActivity.this, Activity_Utama.class));
+                    finish();
                 }
             }
         };
@@ -258,6 +257,7 @@ public class LoginActivity extends AppCompatActivity {
 
             if (result.isSuccess()) {
                 GoogleSignInAccount account = result.getSignInAccount();
+                mGoogleApiClient.clearDefaultAccountAndReconnect();
                 firebaseAuthWithGoogle(account);
             }else {
 
