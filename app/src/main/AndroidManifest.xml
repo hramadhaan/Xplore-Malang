@@ -36,7 +36,8 @@
         <activity android:name=".Weather.data.MainActivity_weather" />
         <activity
             android:name=".Content.TambahKonten"
-            android:parentActivityName=".Activity_Utama" />
+            android:parentActivityName=".Activity_Utama"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".Activity_Utama"
             android:theme="@style/AppTheme.NoActionBar" />

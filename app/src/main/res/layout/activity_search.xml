@@ -78,7 +78,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/imageView"
+        android:id="@+id/user_image"
         android:onClick="clickExit"
         android:layout_width="40dp"
         android:layout_height="40dp"

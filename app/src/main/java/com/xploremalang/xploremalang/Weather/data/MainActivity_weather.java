@@ -33,7 +33,7 @@ public class MainActivity_weather extends AppCompatActivity {
     private void getLocation(String name){
         helper.getWeatherFromLocationName(name, BuildConfig.API_KEY)
                 .enqueue(new Callback<OpenWeatherMap>() {
-                    @SuppressLint("SetTextI18n")
+                    @SuppressLint({"SetTextI18n", "DefaultLocale"})
                     @Override
                     public void onResponse(@SuppressWarnings("NullableProblems") Call<OpenWeatherMap> call, @SuppressWarnings("NullableProblems") Response<OpenWeatherMap> response) {
                         OpenWeatherMap result = response.body();
@@ -41,7 +41,8 @@ public class MainActivity_weather extends AppCompatActivity {
                         if (result!=null){
                             ((TextView)findViewById(R.id.textView_condition)).setText(result.getWeatherList().get(0).getDescription());
                             ((TextView)findViewById(R.id.textView_location)).setText(result.getName());
-                            ((TextView)findViewById(R.id.textView_temperature)).setText((result.getMain().getTemp()-273)+" C °");
+                            double temp = result.getMain().getTemp()-273;
+                            ((TextView)findViewById(R.id.textView_temperature)).setText(String.format("%.2f C °", temp));
                             Glide.with(MainActivity_weather.this).load(String.format("http://openweathermap.org/img/w/%s.png", result.getWeatherList().get(0).getIcon()))
                                     .into(weatherIcon);
                         }else {

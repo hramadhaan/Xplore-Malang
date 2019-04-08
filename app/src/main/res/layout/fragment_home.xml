@@ -14,7 +14,7 @@
         <RelativeLayout
             android:layout_alignParentTop="true"
             android:layout_margin="10dp"
-            android:background="@android:color/white"
+            android:background="@drawable/bg_spinnder"
             android:id="@+id/root_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -30,7 +30,7 @@
             android:layout_below="@id/root_spinner"
             android:id="@+id/recycler_home"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+            android:layout_height="match_parent"/>
 
         <ProgressBar
             android:id="@+id/barProgressHome"

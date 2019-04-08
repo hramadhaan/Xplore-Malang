@@ -1,16 +1,11 @@
 package com.xploremalang.xploremalang;
 
 import android.content.Intent;
-import android.media.Image;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -19,15 +14,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.xploremalang.xploremalang.AccountActivity.LoginActivity;
@@ -41,8 +34,6 @@ public class Activity_Utama extends AppCompatActivity
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    ImageView mimageView;
-    TextView mtextView;
     GoogleSignInClient mGoogleSignInClient;
 
     @Override
@@ -52,11 +43,11 @@ public class Activity_Utama extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ImageView mimageView = (ImageView) findViewById(R.id.imageView);
-        TextView mtextView = (TextView) findViewById(R.id.textView);
+        ImageView mimageView = (ImageView) findViewById(R.id.user_image);
+        TextView mtextView = (TextView) findViewById(R.id.user_email);
 
-        mimageView = findViewById(R.id.imageView);
-        mtextView = findViewById(R.id.textView);
+        mimageView = findViewById(R.id.user_image);
+        mtextView = findViewById(R.id.user_email);
 
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.navbar_head);
@@ -77,9 +68,12 @@ public class Activity_Utama extends AppCompatActivity
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() == null){
                     startActivity(new Intent(Activity_Utama.this, LoginActivity.class));
+                    finish();
                 }
             }
         };
+
+        loadUserInformation(navigationView);
 
 //        BOTTOM NAVBAR
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
@@ -89,17 +83,18 @@ public class Activity_Utama extends AppCompatActivity
 
     }
 
-    private void loadUserInformation() {
+    private void loadUserInformation(NavigationView navigationView) {
+        View nav_header = navigationView.getHeaderView(0);
         FirebaseUser user = mAuth.getCurrentUser();
 
         if(user !=null){
             if(user.getPhotoUrl()!=null){
                 Glide.with(this)
-                        .load(user.getPhotoUrl().toString())
-                        .into(mimageView);
+                        .load(user.getPhotoUrl())
+                        .into(((ImageView)nav_header.findViewById(R.id.user_image)));
             }
             if(user.getDisplayName()!=null){
-                mtextView.setText(user.getDisplayName());
+                ((TextView)nav_header.findViewById(R.id.user_email)).setText(user.getEmail());
             }
         }
 
@@ -201,5 +196,11 @@ public class Activity_Utama extends AppCompatActivity
     protected void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mAuth.removeAuthStateListener(mAuthListener);
     }
 }
