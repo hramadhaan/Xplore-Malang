@@ -66,14 +66,14 @@
                     android:layout_width="120dp"
                     android:layout_height="125dp"
                     android:layout_margin="10dp"
-                    android:src="@mipmap/AUL" />
+                    android:src="@mipmap/aul" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/zka"
                     android:layout_width="120dp"
                     android:layout_height="125dp"
                     android:layout_margin="10dp"
-                    android:src="@mipmap/RIZKA" />
+                    android:src="@mipmap/rizka" />
 
             </LinearLayout>
 
@@ -133,14 +133,14 @@
                     android:layout_width="120dp"
                     android:layout_height="125dp"
                     android:layout_margin="10dp"
-                    android:src="@mipmap/GEGE" />
+                    android:src="@mipmap/gege" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/dennis"
                     android:layout_width="120dp"
                     android:layout_height="125dp"
                     android:layout_margin="10dp"
-                    android:src="@mipmap/DENNIS" />
+                    android:src="@mipmap/dennis" />
             </LinearLayout>
 
             <RelativeLayout

@@ -27,6 +27,7 @@ import com.xploremalang.xploremalang.AccountActivity.LoginActivity;
 import com.xploremalang.xploremalang.Fragment.FeedFragment;
 import com.xploremalang.xploremalang.Fragment.HomeFragment;
 import com.xploremalang.xploremalang.Fragment.ProfileFragment;
+import com.xploremalang.xploremalang.Transportasi.TransportasiActivity;
 import com.xploremalang.xploremalang.Weather.data.MainActivity_weather;
 
 public class Activity_Utama extends AppCompatActivity
@@ -171,6 +172,10 @@ public class Activity_Utama extends AppCompatActivity
                break;
            case R.id.nav_diskusi:
                Toast.makeText(Activity_Utama.this,"Ini Tombol Lihat Diskusi",Toast.LENGTH_SHORT).show();
+               break;
+           case R.id.nav_transportasi:
+               Intent transportasi = new Intent(Activity_Utama.this, TransportasiActivity.class);
+               startActivity(transportasi);
                break;
            case R.id.nav_about:
                Toast.makeText(Activity_Utama.this,"Ini Tombol About Us",Toast.LENGTH_SHORT).show();
