@@ -29,14 +29,159 @@
 
             <TextView
                 android:id="@+id/tv_about"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="178dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="136dp"
                 android:gravity="center"
+                android:padding="5dp"
                 android:text="@string/about"
-                android:textSize="18sp" />
+                android:textSize="14dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/adamina"
+                android:text="Our Team"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/april"
+                    android:layout_width="120dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:src="@mipmap/april" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/aul"
+                    android:layout_width="120dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:src="@mipmap/AUL" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/zka"
+                    android:layout_width="120dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:src="@mipmap/RIZKA" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="271dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="serif"
+                    android:text="Aprilia Ari Widyastuti"
+                    android:textSize="12sp"
+                    android:typeface="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="136dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="serif"
+                    android:text="Aulia Nuri Ikhsanati"
+                    android:textSize="12sp"
+                    android:typeface="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="serif"
+                    android:text="Rizka Fadhilah"
+                    android:textSize="12sp"
+                    android:typeface="normal" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/hanif"
+                    android:layout_width="120dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:src="@mipmap/hanif" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/gege"
+                    android:layout_width="120dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:src="@mipmap/GEGE" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/dennis"
+                    android:layout_width="120dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:src="@mipmap/DENNIS" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="278dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="serif"
+                    android:text="Hanif Ramadhan A."
+                    android:textSize="12sp"
+                    android:typeface="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="150dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="serif"
+                    android:text="Ilham Satria Aji P."
+                    android:textSize="12sp"
+                    android:typeface="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="serif"
+                    android:text="Dennis Nigel C"
+                    android:textSize="12sp"
+                    android:typeface="normal" />
+            </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>
