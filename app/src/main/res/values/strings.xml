@@ -15,6 +15,13 @@
     <string name="nama_collapse">Nama</string>
 
     <array name="kontenNama">
+        <item>Semua Kategori</item>
+        <item>Pariwisata</item>
+        <item>Kuliner</item>
+        <item>Oleh Oleh</item>
+    </array>
+
+    <array name="pilihan">
         <item>Pariwisata</item>
         <item>Kuliner</item>
         <item>Oleh Oleh</item>

@@ -63,6 +63,8 @@ public class TambahKonten extends AppCompatActivity {
     Spinner spinner_konten;
     ImageView image_added;
 
+    String jenis_konten;
+
     Uri mImageUri;
     String myUri = "";
     StorageReference storageReference;
@@ -80,6 +82,8 @@ public class TambahKonten extends AppCompatActivity {
         et_longtitude = findViewById(R.id.et_longtitude);
         image_added = findViewById(R.id.view_gambar_home);
         spinner_konten = findViewById(R.id.spinner_konten);
+
+        jenis_konten = spinner_konten.getSelectedItem().toString().trim();
 
         storageReference = FirebaseStorage.getInstance().getReference("Konten");
 
@@ -155,6 +159,7 @@ public class TambahKonten extends AppCompatActivity {
                         hashMap.put("wisata",et_wisata.getText().toString());
                         hashMap.put("latitude",et_latitude.getText().toString());
                         hashMap.put("longtitude",et_longtitude.getText().toString());
+                        hashMap.put("jenis_konten",spinner_konten.getSelectedItem().toString());
                         hashMap.put("publisher",FirebaseAuth.getInstance().getCurrentUser().getUid());
 
                         reference.child(postId).setValue(hashMap);

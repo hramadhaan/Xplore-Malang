@@ -12,8 +12,17 @@ public class IsiKonten {
     private String longtitude;
     private String publisher;
     private String wisata;
+    private String jenis_konten;
 
-    public IsiKonten(String postId, String postImage, String description, String latitude, String longtitude, String publisher, String wisata) {
+    public String getJenia_konten() {
+        return jenis_konten;
+    }
+
+    public void setJenia_konten(String jenia_konten) {
+        this.jenis_konten = jenia_konten;
+    }
+
+    public IsiKonten(String postId, String postImage, String description, String latitude, String longtitude, String publisher, String wisata, String jenis_konten) {
         this.postId = postId;
         this.postImage = postImage;
         this.description = description;
@@ -21,6 +30,7 @@ public class IsiKonten {
         this.longtitude = longtitude;
         this.publisher = publisher;
         this.wisata = wisata;
+        this.jenis_konten = jenis_konten;
     }
 
     public IsiKonten() {

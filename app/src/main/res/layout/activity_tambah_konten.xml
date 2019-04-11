@@ -28,7 +28,7 @@
             android:text="Nama Konten"
             android:id="@+id/nama_konten"/>
         <Spinner
-            android:entries="@array/kontenNama"
+            android:entries="@array/pilihan"
             android:id="@+id/spinner_konten"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -11,13 +11,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.xploremalang.xploremalang.Content.IsiKonten;
 import com.xploremalang.xploremalang.Content.TambahKonten;
@@ -33,7 +36,7 @@ public class HomeFragment extends Fragment{
 
     private RecyclerView recyclerView;
     private UploadListAdapter uploadListAdapter;
-
+    private Spinner spinner;
     private ProgressBar progressBar;
 
     private DatabaseReference databaseReference;
@@ -53,6 +56,8 @@ public class HomeFragment extends Fragment{
             }
         });
 
+
+
         recyclerView = van.findViewById(R.id.recycler_home);
         recyclerView.setHasFixedSize(true);
 
@@ -65,27 +70,137 @@ public class HomeFragment extends Fragment{
 
         isiKontens = new ArrayList<>();
         databaseReference = FirebaseDatabase.getInstance().getReference("Konten");
-        databaseReference.addValueEventListener(new ValueEventListener() {
+
+        spinner = van.findViewById(R.id.spinner_home);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        semua();
+                        break;
+                    case 1:
+                        pariwisata();
+                        break;
+                    case 2:
+                        kuliner();
+                        break;
+                    case 3:
+                        oleholeh();
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        return van;
+    }
+
+    private void oleholeh() {
+        Query oleh = FirebaseDatabase.getInstance().getReference("Konten").orderByChild("jenis_konten").equalTo("Oleh Oleh");
+        oleh.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot postSnapshot :dataSnapshot.getChildren()){
+                isiKontens.clear();
+                for (DataSnapshot postSnapshot:dataSnapshot.getChildren()){
                     IsiKonten isiKonten = postSnapshot.getValue(IsiKonten.class);
                     isiKontens.add(isiKonten);
                     progressBar.setVisibility(getView().INVISIBLE);
+
                 }
                 uploadListAdapter = new UploadListAdapter(getActivity(),isiKontens);
                 recyclerView.setAdapter(uploadListAdapter);
+                uploadListAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getActivity(),databaseError.getMessage(),Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+
+    private void kuliner() {
+
+        Query kuli = FirebaseDatabase.getInstance().getReference("Konten").orderByChild("jenis_konten").equalTo("Kuliner");
+        kuli.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                isiKontens.clear();
+                for (DataSnapshot postSnapshot:dataSnapshot.getChildren()){
+                    IsiKonten isiKonten = postSnapshot.getValue(IsiKonten.class);
+
+                    isiKontens.add(isiKonten);
+                    progressBar.setVisibility(getView().INVISIBLE);
+
+                }
+                uploadListAdapter = new UploadListAdapter(getActivity(),isiKontens);
+                recyclerView.setAdapter(uploadListAdapter);
+                uploadListAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
 
+    }
 
+    private void pariwisata() {
 
+        Query pari = FirebaseDatabase.getInstance().getReference("Konten").orderByChild("jenis_konten").equalTo("Pariwisata");
+        pari.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                isiKontens.clear();
+                for (DataSnapshot postSnapshot:dataSnapshot.getChildren()){
+                    IsiKonten isiKonten = postSnapshot.getValue(IsiKonten.class);
 
-        return van;
+                    isiKontens.add(isiKonten);
+                    progressBar.setVisibility(getView().INVISIBLE);
+
+                }
+                uploadListAdapter = new UploadListAdapter(getActivity(),isiKontens);
+                recyclerView.setAdapter(uploadListAdapter);
+                uploadListAdapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+    public void semua(){
+        Query semua = FirebaseDatabase.getInstance().getReference("Konten");
+        semua.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                isiKontens.clear();
+                for (DataSnapshot postSnapshot:dataSnapshot.getChildren()){
+                    IsiKonten isiKonten = postSnapshot.getValue(IsiKonten.class);
+                    isiKontens.add(isiKonten);
+                    progressBar.setVisibility(getView().INVISIBLE);
+
+                }
+                uploadListAdapter = new UploadListAdapter(getActivity(),isiKontens);
+                recyclerView.setAdapter(uploadListAdapter);
+                uploadListAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }
