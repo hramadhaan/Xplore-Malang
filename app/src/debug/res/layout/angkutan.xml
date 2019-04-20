@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_marginTop="25dp"
+                android:id="@+id/Angkutan_Image"
+                android:layout_width="wrap_content"
+                android:layout_height="220dp"
+                android:src="@drawable/angkutan" />
+
+            <TextView
+                android:id="@+id/tvAngkutan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Angkutan"
+                android:textSize="18sp"
+                android:textStyle="italic|bold" />
+
+            <TextView
+                android:id="@+id/descANgkutan"
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Angkutan merupakan transportasi umum di kota Malang yang jamak dijumpai. Seluruh armadanya berwarna biru. Cukup membingungkan bagi yang datang ke kota Malang untuk pertama kali. Pembedanya hanya tulisan trayek yang tertempel di beberapa sisi kendaraan. Mobilnya berjenis APV Carry sebagaimana lazimnya angkot di beberapa kota di Indonesia.
+
+Trayek yang paling ramai ditanyakan biasanya dari Terminal Arjosari atau Stasiun Kota Malang menuju kota Batu. Kamu bisa naik angkot ADL/AL yang menuju Terminal Landungsari. Dari terminal itulah gerbang menuju kota Batu bermula."
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical|end"/>
+
+            <Button
+                android:id="@+id/cancelButton"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Back" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

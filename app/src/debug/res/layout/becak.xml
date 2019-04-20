@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginTop="25dp"
+            android:id="@+id/Becak_Image"
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
+            android:src="@drawable/macito" />
+
+        <TextView
+            android:id="@+id/tvBecak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Becak"
+            android:textSize="18sp"
+            android:textStyle="italic|bold" />
+
+        <TextView
+            android:id="@+id/descBecak"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Di masa lalu becak mungkin jadi transportasi umum di kota Malang yang paling sering dimanfaatkan. Namun, sekarang, becak hanya hadir sebagai moda transportasi wisata saja. Keberadaannya pun tidak banyak. Hanya berada di beberapa titik kawasan bersejarah Malang saja, seperti jalan Semeru "
+            android:textSize="18sp" />
+        <Button
+            android:id="@+id/cancelButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Back" />
+    </LinearLayout>
+
+</LinearLayout>

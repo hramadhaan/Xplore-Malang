@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginTop="25dp"
+            android:id="@+id/Macito_Image"
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
+            android:src="@drawable/ojol" />
+
+        <TextView
+            android:id="@+id/tvOjol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Ojek Online"
+            android:textSize="18sp"
+            android:textStyle="italic|bold" />
+
+        <TextView
+            android:id="@+id/descOjol"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dikota Malang sudah tersedia berbagai Ojek Online seperti Grab, Gojek dan Uber. Namun, dibandingkan GoJek dan GrabCar, Uber lebih aktif beroperasi selama 24 jam. Termasuk jika ada penerbangan dini hari atau pagi sekali, kamu bisa memanfaatkan Uber untuk menuju Bandara Internasional Juanda Surabaya di Sidoarjo "
+            android:textSize="18sp" />
+
+
+        <Button
+            android:id="@+id/cancelButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Back" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

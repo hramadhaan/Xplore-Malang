@@ -2,7 +2,6 @@ package com.xploremalang.xploremalang;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.IInterface;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -24,18 +23,13 @@ import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.xploremalang.xploremalang.AccountActivity.EditProfile;
 import com.xploremalang.xploremalang.AccountActivity.LoginActivity;
-import com.xploremalang.xploremalang.AccountActivity.User;
 import com.xploremalang.xploremalang.Fragment.FeedFragment;
 import com.xploremalang.xploremalang.Fragment.HomeFragment;
 import com.xploremalang.xploremalang.Fragment.ProfileFragment;
-import com.xploremalang.xploremalang.Transportasi.TransportasiActivity;
 import com.xploremalang.xploremalang.Weather.data.MainActivity_weather;
 
 public class Activity_Utama extends AppCompatActivity
