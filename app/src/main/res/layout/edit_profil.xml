@@ -5,114 +5,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <android.support.design.widget.AppBarLayout
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_editprofil"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:titleTextColor="@color/white"
+                app:title="Edit Profile"
+                android:textAlignment="center">
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/appbar_edit">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/edit_foto"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/user_icon"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_change_photo"
+        android:text="Change Picture"
+        android:layout_below="@id/edit_foto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_below="@id/edit_change_photo"
+        >
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar_editprofil"
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/edit_nama"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:titleTextColor="@color/white"
-            app:title="Edit Profile"
-            android:textAlignment="center">
+            android:layout_height="wrap_content"
+            android:hint="Nama" />
 
+    </android.support.design.widget.TextInputLayout>
 
+</RelativeLayout>
 
-
-
-
-        </android.support.v7.widget.Toolbar>
-
-    </android.support.design.widget.AppBarLayout>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <RelativeLayout
+        <Button
+            android:id="@+id/edit_button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="600dp"
+            android:layout_centerHorizontal="true"
+            android:text="SAVE"/>
 
-            <ImageView
-                android:id="@+id/editprofile_photo"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginLeft="50dp"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/com_facebook_profile_picture_blank_portrait" />
-
-            <TextView
-                android:id="@+id/tId_editprofil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="220dp"
-                android:text="ID            :"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/Id_editprofil"
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="210dp"
-                android:layout_marginLeft="130dp"
-                />
-
-            <TextView
-                android:id="@+id/tnama_editprofil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="260dp"
-                android:text="Nama     :"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/nama_editprofil"
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="250dp"
-                android:layout_marginLeft="130dp"
-                />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="300dp"
-                android:text="Email     :"
-                android:textSize="18dp"
-                android:textStyle="bold"/>
-
-            <EditText
-                android:id="@+id/email_editprofil"
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="290dp"
-                android:layout_marginLeft="130dp" />
-
-
-
-        </RelativeLayout>
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/bSave_editprofil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="600dp"
-        android:layout_gravity="center_horizontal"
-        android:text="SAVE"/>
+    </RelativeLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>

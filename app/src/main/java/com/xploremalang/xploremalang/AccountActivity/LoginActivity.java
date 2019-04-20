@@ -51,6 +51,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -259,6 +260,8 @@ public class LoginActivity extends AppCompatActivity {
                 GoogleSignInAccount account = result.getSignInAccount();
                 mGoogleApiClient.clearDefaultAccountAndReconnect();
                 firebaseAuthWithGoogle(account);
+
+
             }else {
 
             }
@@ -269,6 +272,7 @@ public class LoginActivity extends AppCompatActivity {
     private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
 
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(),null);
+
         mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull com.google.android.gms.tasks.Task<AuthResult> task) {

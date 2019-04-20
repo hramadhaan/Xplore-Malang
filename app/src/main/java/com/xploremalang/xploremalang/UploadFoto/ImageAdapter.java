@@ -12,62 +12,93 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.xploremalang.xploremalang.AccountActivity.User;
 import com.xploremalang.xploremalang.R;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewholder> {
 
-    private Context mContext;
-    private List<Upload> mUploads;
+    public Context mContext;
+    public List<Upload> mPost;
+    private FirebaseStorage firebaseStorage;
+    private FirebaseUser firebaseUser;
 
-    public ImageAdapter(Context context,List<Upload> uploads){
-        mContext=context;
-        mUploads=uploads;
+    public ImageAdapter(Context mContext, List<Upload> mPost) {
+        this.mContext = mContext;
+        this.mPost = mPost;
     }
 
+    @NonNull
     @Override
-    public ImageViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mContext).inflate(R.layout.image_item,parent,false);
+    public ImageAdapter.ImageViewholder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        View v = LayoutInflater.from(mContext).inflate(R.layout.image_item,viewGroup,false);
         return new ImageViewholder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ImageViewholder holder, int position) {
+    public void onBindViewHolder(@NonNull ImageAdapter.ImageViewholder imageViewholder, int i) {
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        Upload upload = mPost.get(i);
+        Glide.with(mContext).load(upload.getImageFeed()).into(imageViewholder.upload_foto);
 
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(mContext);
-        holder.DisplayName.setText(account.getDisplayName());
-        Glide.with(mContext)
-                .load(account.getPhotoUrl())
-                .fitCenter()
-                .into(holder.ProfilePicture);
+        if (upload.getDeskripsi().equals("")){
+            imageViewholder.upload_deskripsi.setVisibility(View.GONE);
+        } else {
+            imageViewholder.upload_deskripsi.setVisibility(View.VISIBLE);
+            imageViewholder.upload_deskripsi.setText(upload.getDeskripsi());
+        }
 
-        Upload uploadCurrent = mUploads.get(position);
-        holder.textViewName.setText(uploadCurrent.getName());
-        Glide.with(mContext)
-                .load(uploadCurrent.getImageUrl())
-                .fitCenter()
-                .into(holder.imageView);
+        publisherInfo(imageViewholder.upload_akun,imageViewholder.upload_nama,upload.getPublisher());
     }
 
     @Override
     public int getItemCount() {
-        return mUploads.size();
+        return mPost.size();
     }
 
     public class ImageViewholder extends RecyclerView.ViewHolder {
+        public ImageView upload_foto;
+        public CircleImageView upload_akun;
+        public TextView upload_nama,upload_deskripsi;
 
-    public TextView textViewName,DisplayName;
-    public ImageView imageView,ProfilePicture;
-
-
-        public ImageViewholder(View itemView){
+        public ImageViewholder(@NonNull View itemView) {
             super(itemView);
 
-            DisplayName = itemView.findViewById(R.id.user_email);
-            ProfilePicture = itemView.findViewById(R.id.image_user);
-            textViewName = itemView.findViewById(R.id.tv_description);
-            imageView = itemView.findViewById(R.id.iv_upload);
+            upload_akun = itemView.findViewById(R.id.upload_akun);
+            upload_foto = itemView.findViewById(R.id.upload_foto);
+            upload_nama = itemView.findViewById(R.id.upload_nama);
+            upload_deskripsi = itemView.findViewById(R.id.upload_deskripsi);
+
         }
     }
+
+    private void publisherInfo (final CircleImageView upload_akun, final TextView upload_nama, final String userId){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(userId);
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User user =dataSnapshot.getValue(User.class);
+                Glide.with(mContext).load(user.getImageurl()).into(upload_akun);
+                upload_nama.setText(user.getNama());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
 }

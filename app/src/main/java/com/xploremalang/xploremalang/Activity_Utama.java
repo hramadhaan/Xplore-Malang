@@ -2,6 +2,7 @@ package com.xploremalang.xploremalang;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.IInterface;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -23,7 +24,14 @@ import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.xploremalang.xploremalang.AccountActivity.EditProfile;
 import com.xploremalang.xploremalang.AccountActivity.LoginActivity;
+import com.xploremalang.xploremalang.AccountActivity.User;
 import com.xploremalang.xploremalang.Fragment.FeedFragment;
 import com.xploremalang.xploremalang.Fragment.HomeFragment;
 import com.xploremalang.xploremalang.Fragment.ProfileFragment;
@@ -37,6 +45,9 @@ public class Activity_Utama extends AppCompatActivity
     private FirebaseAuth.AuthStateListener mAuthListener;
     GoogleSignInClient mGoogleSignInClient;
 
+    ImageView mimageView;
+    TextView mtextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +55,7 @@ public class Activity_Utama extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ImageView mimageView = (ImageView) findViewById(R.id.user_image);
-        TextView mtextView = (TextView) findViewById(R.id.user_email);
+
 
         mimageView = findViewById(R.id.user_image);
         mtextView = findViewById(R.id.user_email);
@@ -87,6 +97,7 @@ public class Activity_Utama extends AppCompatActivity
     private void loadUserInformation(NavigationView navigationView) {
         View nav_header = navigationView.getHeaderView(0);
         FirebaseUser user = mAuth.getCurrentUser();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(user.getUid());
 
         if(user !=null){
             if(user.getPhotoUrl()!=null){
@@ -98,6 +109,8 @@ public class Activity_Utama extends AppCompatActivity
                 ((TextView)nav_header.findViewById(R.id.user_email)).setText(user.getEmail());
             }
         }
+
+
 
     }
 
@@ -150,7 +163,7 @@ public class Activity_Utama extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            startActivity(new Intent(Activity_Utama.this,SettingsActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
@@ -164,8 +177,8 @@ public class Activity_Utama extends AppCompatActivity
 
        switch (id){
            case R.id.nav_edit_profl:
-               Toast.makeText(Activity_Utama.this,"Ini Tombol Edit Profle",Toast.LENGTH_SHORT).show();
-
+               Intent profil = new Intent(Activity_Utama.this, EditProfile.class);
+               startActivity(profil);
                break;
            case R.id.nav_feedback:
                Toast.makeText(Activity_Utama.this,"Ini Tombol Lihat Feedback",Toast.LENGTH_SHORT).show();

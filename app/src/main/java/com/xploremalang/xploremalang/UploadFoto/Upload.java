@@ -1,36 +1,60 @@
 package com.xploremalang.xploremalang.UploadFoto;
 
 public class Upload {
-    private String mName;
-    private String mImageUrl;
+    private String postId;
+    private String imageFeed;
+    private String deskripsi;
+    private String publisher;
+    private String gambarPublisher;
+
+    public Upload(String postId, String imageFeed, String deskripsi, String publisher, String gambarPublisher) {
+        this.postId = postId;
+        this.imageFeed = imageFeed;
+        this.deskripsi = deskripsi;
+        this.publisher = publisher;
+        this.gambarPublisher = gambarPublisher;
+    }
 
     public Upload() {
-//EMPTY CONSTRUCTOR NEEDED
     }
 
-    public Upload(String name, String imageUrl){
-        if (name.trim().equals("")){
-            name = "No Name";
-        }
-
-        mName = name;
-        mImageUrl = imageUrl;
+    public String getPostId() {
+        return postId;
     }
 
-    public String getName(){
-        return mName;
+    public void setPostId(String postId) {
+        this.postId = postId;
     }
 
-    public void setName(String name){
-        mName = name;
+    public String getImageFeed() {
+        return imageFeed;
     }
 
-    public String getImageUrl() {
-        return mImageUrl;
+    public void setImageFeed(String imageFeed) {
+        this.imageFeed = imageFeed;
     }
 
-    public void setImageUrl(String imageUrl){
-        mImageUrl = imageUrl;
+    public String getDeskripsi() {
+        return deskripsi;
     }
 
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public String getGambarPublisher() {
+        return gambarPublisher;
+    }
+
+    public void setGambarPublisher(String gambarPublisher) {
+        this.gambarPublisher = gambarPublisher;
+    }
 }

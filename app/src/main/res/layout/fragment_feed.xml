@@ -32,15 +32,6 @@
         app:fab_addButtonPlusIconColor="@color/white"
         app:fab_labelStyle="@style/custom_fab">
 
-        <com.getbase.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/white"
-            app:fab_colorPressed="@color/white"
-            app:fab_size="mini"
-            app:fab_icon="@drawable/ic_add_black_24dp"
-            android:id="@+id/fab_action1"
-            app:fab_title="Ambil Foto"/>
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"

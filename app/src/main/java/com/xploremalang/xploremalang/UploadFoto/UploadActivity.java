@@ -33,7 +33,9 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
+import com.theartofdev.edmodo.cropper.CropImage;
 import com.xploremalang.xploremalang.Activity_Utama;
+import com.xploremalang.xploremalang.Content.TambahKonten;
 import com.xploremalang.xploremalang.R;
 import com.xploremalang.xploremalang.Weather.data.Sys;
 
@@ -61,7 +63,7 @@ public class UploadActivity extends AppCompatActivity {
         btnGambar = findViewById(R.id.btn_file);
         btnUpload = findViewById(R.id.btn_upload);
 
-        storageReference = FirebaseStorage.getInstance().getReference("feed");
+        storageReference = FirebaseStorage.getInstance().getReference("Feeds");
 
         btnUpload.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -70,38 +72,28 @@ public class UploadActivity extends AppCompatActivity {
             }
         });
 
-        btnGambar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openFileChooser();
-            }
-        });
+        CropImage.activity()
+                .setAspectRatio(1,1)
+                .start(UploadActivity.this);
 
     }
 
-    private void openFileChooser() {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, PICK_IMAGE_REQUEST);
-    }
 
     private void uploadFile() {
-
         final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading...");
+        progressDialog.setMessage("Uploading...");
         progressDialog.show();
 
-        if (imageUri != null){
-            final StorageReference fileReference = storageReference.child(System.currentTimeMillis()+"."+getFileExtension(imageUri));
-            uploadTask = fileReference.putFile(imageUri);
+        if (imageUri!=null){
+            final StorageReference filereference = storageReference.child(System.currentTimeMillis()+"."+getFileExtension(imageUri));
+            uploadTask =filereference.putFile(imageUri);
             uploadTask.continueWithTask(new Continuation() {
                 @Override
                 public Object then(@NonNull Task task) throws Exception {
-                    if (!task.isComplete()) {
+                    if (!task.isSuccessful()){
                         throw task.getException();
                     }
-                    return fileReference.getDownloadUrl();
+                    return filereference.getDownloadUrl();
                 }
             }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                 @Override
@@ -109,34 +101,35 @@ public class UploadActivity extends AppCompatActivity {
                     if (task.isSuccessful()){
                         Uri downloadUri = task.getResult();
                         myUrl = downloadUri.toString();
-                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("feed");
-                        String postid = reference.push().getKey();
 
-                        HashMap<String, Object> hashMap = new HashMap<>();
-                        hashMap.put("postid",postid);
-                        hashMap.put("postImage",myUrl);
-                        hashMap.put("description",description.getText().toString());
-                        hashMap.put("publisher", FirebaseAuth.getInstance().getCurrentUser().getUid());
+                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Feeds");
+                        String postId = reference.push().getKey();
+                        HashMap<String,Object> hashMap = new HashMap<>();
+                        hashMap.put("postId",postId);
+                        hashMap.put("imageFeed",myUrl);
+                        hashMap.put("deskripsi",description.getText().toString());
+                        hashMap.put("publisher",FirebaseAuth.getInstance().getCurrentUser().getUid());
+//                        hashMap.put("gambarPublisher",FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl());
 
-                        reference.child(postid).setValue(hashMap);
+                        reference.child(postId).setValue(hashMap);
 
                         progressDialog.dismiss();
+
                         startActivity(new Intent(UploadActivity.this,Activity_Utama.class));
                         finish();
                     } else {
-                        Toast.makeText(UploadActivity.this,"Failed...",Toast.LENGTH_LONG).show();
+                        Toast.makeText(UploadActivity.this,"Failed",Toast.LENGTH_SHORT).show();
                     }
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(UploadActivity.this,e.getMessage(),Toast.LENGTH_LONG);
+                    Toast.makeText(UploadActivity.this,""+e.getMessage(),Toast.LENGTH_SHORT).show();
                 }
             });
         } else {
-            Toast.makeText(UploadActivity.this,"No Image Selected",Toast.LENGTH_LONG).show();
+            Toast.makeText(UploadActivity.this,"Image Selected",Toast.LENGTH_SHORT).show();
         }
-
     }
 
     private String getFileExtension(Uri uri) {
@@ -148,12 +141,17 @@ public class UploadActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data !=null && data.getData() != null){
-            imageUri = data.getData();
-            Glide.with(this).load(imageUri).into(imageUpload);
+
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK){
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            imageUri = result.getUri();
+            imageUpload.setImageURI(imageUri);
         } else {
-            Toast.makeText(UploadActivity.this,"Something gone wrong",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Something Wrong", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(UploadActivity.this,Activity_Utama.class));
+            finish();
         }
+
     }
 }
 
