@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pariwisata.Pariwisata_bromo">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/foto_bromo"
+            android:layout_marginTop="-90dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="150dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="#fff"
+                android:fontFamily="@font/gibson_bold"
+                android:gravity="center|center"
+                android:text="Soto Ayam Lombok"
+                android:textColor="#1D1DFF"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/judul_sotoayam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="220dp"
+                android:fontFamily="@font/gibson_bold"
+                android:gravity="center_horizontal"
+                android:text="DESKRIPSI"
+                android:textColor="@color/fui_linkColor"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/deskripsi_sotoayam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/judul_sotoayam"
+                android:layout_marginTop="11dp"
+                android:fontFamily="@font/gibson_regularitalic"
+                android:gravity="center"
+                android:text="Soto Ayam Lombok yang berada di Malang ini sudah berdiri sejak tahun 1955 berlokasi di jalan lombok setelah itu berpindah ke jalan sulawesi.Soto ini memiliki komposisi telur rebus, irisan kol, tauge, kentang, dan untuk daging soto ayam lombok ini menggunakan ayam kampung.Dan sebagai pelengkap tersedia juga kerupuk ikan hingga krupuk rambak.Pemilik warung makan soto ayam lombok ini tetap menjaga kualitasnya dengan kuahnya dengan harga untuk nasi soto ayam Rp.14.000 jika campur dengan hati ampela menjadi Rp.18.000.Untuk jam buka warung makan ini buka mulai dari pukul 06.00 AM sampai dengan 01.00 AM dini hari."
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/lokasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deskripsi_sotoayam"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/gibson_bold"
+                android:gravity="center"
+                android:text="LOKASI"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="405dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:layout_marginTop="600dp">
+
+            <TextView
+            android:id="@+id/lblRateMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rate Me"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="4"
+                android:stepSize="1.0"
+                android:rating="2.0" />
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/lblResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Result : "
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/txtRatingValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</ScrollView>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UploadFoto.UploadActivity"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_upload"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center_horizontal"
+        android:theme="@style/AppTheme.AppaBarOverrlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_alignParentTop="true"
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Xplore Malang"
+                android:textSize="22dp"
+                android:gravity="center"
+                android:textColor="@color/com_facebook_blue"/>
+
+
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/appbar_upload">
+
+        <Button
+            android:id="@+id/btn_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pilih Gambar"
+            />
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/btn_file"
+            android:ems="10"
+            android:hint="Caption Foto"
+            android:inputType="textCapSentences"
+            android:maxLength="100"/>
+
+        <ImageView
+            android:id="@+id/imageUpload"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/description"
+            android:layout_above="@id/progress_bar"
+            android:layout_marginTop="15dp"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_above="@id/btn_upload"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btn_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:text="Upload"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_show_uploads"
+            android:layout_alignBottom="@id/btn_upload"
+            android:layout_alignTop="@id/btn_upload"
+            android:layout_marginStart="25dp"
+            android:layout_toEndOf="@id/btn_upload"
+            android:text="Show Uploads"
+            android:gravity="center"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

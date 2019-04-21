@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pariwisata.Pariwisata_bromo">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/foto_bromo"
+            android:layout_marginTop="-90dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="150dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="#fff"
+                android:fontFamily="@font/gibson_bold"
+                android:gravity="center|center"
+                android:text="Wisata Alam Bromo"
+                android:textColor="#1D1DFF"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/judul_bromo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="220dp"
+                android:fontFamily="@font/gibson_bold"
+                android:gravity="center_horizontal"
+                android:text="DESKRIPSI"
+                android:textColor="#4C5264"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/deskripsi_bromo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/judul_bromo"
+                android:layout_marginTop="11dp"
+                android:fontFamily="@font/gibson_regularitalic"
+                android:gravity="center"
+                android:text="Gunung Bromo sendiri diambil dari salah satu dewa utama dalam agama Hindu yaitu Brahma, gunung ini memiliki ketinggian 2329 meter di atas permukaan air laut.  Status Gunung Bromo masih aktif membuat daya tarik tersendiri bagi wisatawan, hamparan gunung nan indah dikelilingi awan putih membuat mata tak jenuh untuk memandang, wisata Gunung Bromo sangat ramai dikunjungi wisatawan khususnya pada hari libur.  Dari Gunung Bromo kita bisa melihat indahnya matahari terbit dari ketinggian 2.780  meter di atas permukaan air laut dihiasi indahnya hamparan pegunungan seperti negeri di atas awan. Tidak sedikit wisatawan ingin mengabadikan momen indah ini, dari atap penanjakan wisatawan dapat melihat indahnya gunung semeru yang mengeluarkan asap yang dibarengi dengan naiknya matahari memberikan cahaya keindahan di Wisata Gunung Bromo ini."
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/lokasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/deskripsi_bromo"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/gibson_bold"
+                android:gravity="center"
+                android:text="LOKASI"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+        
+        <LinearLayout
+            android:layout_width="405dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:layout_marginTop="500dp">
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:numStars="4"
+                android:stepSize="1.0"
+                android:rating="2.0" />
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Submit" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/lblResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Result : "
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/txtRatingValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/comment_profile_image"
+            android:layout_marginTop="630dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/people"
+            app:civ_border_color="@color/black_semi_transparent"
+            app:civ_border_width="0.5dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relLayout1"
+            android:layout_toRightOf="@+id/comment_profile_image"
+            android:layout_marginTop="630dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="80dp"
+                android:layout_marginBottom="20dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="mitch.tabian"
+                    android:id="@+id/comment_username"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black_semi_transparent"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="this is a feedback"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/black_semi_transparent"
+                    android:textSize="18sp"
+                    android:layout_toRightOf="@+id/comment_username"
+                    android:id="@+id/comment"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 d"
+                    android:textColor="@color/black_semi_transparent"
+                    android:textSize="14sp"
+                    android:id="@+id/comment_time_posted"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@+id/comment"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20 likes"
+                    android:textStyle="bold"
+                    android:textColor="@color/black_semi_transparent"
+                    android:textSize="14sp"
+                    android:id="@+id/comment_likes"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@+id/comment"
+                    android:layout_toRightOf="@+id/comment_time_posted"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reply"
+                    android:textStyle="bold"
+                    android:textColor="@color/black_semi_transparent"
+                    android:textSize="14sp"
+                    android:id="@+id/comment_reply"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@+id/comment"
+                    android:layout_toRightOf="@+id/comment_likes"/>
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/comment_like"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="40dp"
+                android:src="@drawable/love"
+                android:layout_centerVertical="true"/>
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
+
+
+
