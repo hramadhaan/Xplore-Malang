@@ -15,7 +15,7 @@ public class Search extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_search);
         super.onCreate(savedInstanceState);
-        Cari = findViewById(R.id.search);
+        Cari = findViewById(R.id.search_edit);
         submit_search = findViewById(R.id.button_search);
 
         submit_search.setOnClickListener(new View.OnClickListener() {
@@ -25,4 +25,6 @@ public class Search extends AppCompatActivity {
             }
         });
     }
+
+
 }

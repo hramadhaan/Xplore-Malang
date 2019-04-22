@@ -30,6 +30,7 @@ import com.xploremalang.xploremalang.AccountActivity.LoginActivity;
 import com.xploremalang.xploremalang.Fragment.FeedFragment;
 import com.xploremalang.xploremalang.Fragment.HomeFragment;
 import com.xploremalang.xploremalang.Fragment.ProfileFragment;
+import com.xploremalang.xploremalang.Transportasi.Transportasi;
 import com.xploremalang.xploremalang.Weather.data.MainActivity_weather;
 
 public class Activity_Utama extends AppCompatActivity
@@ -157,7 +158,7 @@ public class Activity_Utama extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(Activity_Utama.this,SettingsActivity.class));
+            startActivity(new Intent(Activity_Utama.this,menu_search.class));
         }
 
         return super.onOptionsItemSelected(item);
@@ -181,7 +182,7 @@ public class Activity_Utama extends AppCompatActivity
                Toast.makeText(Activity_Utama.this,"Ini Tombol Lihat Diskusi",Toast.LENGTH_SHORT).show();
                break;
            case R.id.nav_transportasi:
-               Intent transportasi = new Intent(Activity_Utama.this, TransportasiActivity.class);
+               Intent transportasi = new Intent(Activity_Utama.this, Transportasi.class);
                startActivity(transportasi);
                break;
            case R.id.nav_about:

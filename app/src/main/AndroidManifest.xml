@@ -8,6 +8,7 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
 
     <application
         android:allowBackup="true"
@@ -19,6 +20,7 @@
         <activity android:name=".Content.CariActivity"></activity>
         <activity android:name=".SettingsActivity" />
         <activity android:name=".Comment.Comment_Activity" />
+        <activity android:name=".menu_search"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
