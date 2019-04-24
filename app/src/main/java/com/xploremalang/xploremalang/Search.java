@@ -56,6 +56,9 @@ public class Search extends AppCompatActivity {
         search_recyclerview.setAdapter(searchAdapter);
 
         readList();
+
+
+//        DISINI KAYANYA ADA YG SALAH
         edit_search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -97,6 +100,11 @@ public class Search extends AppCompatActivity {
             }
         });
     }
+//    DISINI UDAH GA ADA YG SALAH
+//    KAYANYA ADA YG SALAH DIANTARA ITU ATAU DI XML NYA
+//    SUMBERNYA ADA DI INSTAGRAM CLONE
+
+
     private void readList(){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Konten");
         reference.addValueEventListener(new ValueEventListener() {
