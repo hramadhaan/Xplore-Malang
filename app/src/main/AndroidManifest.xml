@@ -20,7 +20,6 @@
         <activity android:name=".Content.CariActivity"></activity>
         <activity android:name=".SettingsActivity" />
         <activity android:name=".Comment.Comment_Activity" />
-        <activity android:name=".menu_search"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -67,6 +66,7 @@
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
         <activity android:name=".AccountActivity.EditProfile" />
+        <activity android:name=".Search"/>
     </application>
 
 </manifest>

@@ -14,13 +14,7 @@ public class IsiKonten {
     private String wisata;
     private String jenis_konten;
 
-    public String getJenia_konten() {
-        return jenis_konten;
-    }
 
-    public void setJenia_konten(String jenia_konten) {
-        this.jenis_konten = jenia_konten;
-    }
 
     public IsiKonten(String postId, String postImage, String description, String latitude, String longtitude, String publisher, String wisata, String jenis_konten) {
         this.postId = postId;
@@ -90,5 +84,13 @@ public class IsiKonten {
 
     public void setWisata(String wisata) {
         this.wisata = wisata;
+    }
+
+    public String getJenis_konten() {
+        return jenis_konten;
+    }
+
+    public void setJenis_konten(String jenis_konten) {
+        this.jenis_konten = jenis_konten;
     }
 }

@@ -1,107 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".menu_search"
+    tools:context=".Search"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/search_edit"
-        android:layout_width="335dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="225dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="8dp"
-        android:text="Apa yang ingin Anda cari ?"
-        android:textColor="@color/browser_actions_text_color"
-        android:textColorLink="@color/browser_actions_text_color"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button_search"
-        android:layout_width="271dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/rounded_button"
-        android:text="Search"
-        android:textColor="#fff"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_edit"
-        tools:ignore="MissingConstraints" />
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="395dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#fff"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Search"
-        android:textColor="@color/DeepSkyBlue"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="34dp"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/user_image"
-        android:onClick="clickExit"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/ic_clear_black_24dp"
-        tools:layout_editor_absoluteX="318dp"
-        tools:layout_editor_absoluteY="22dp"
-        tools:ignore="MissingConstraints" />
-
-    <LinearLayout
-
-        android:id="@+id/linearLayout"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="318dp">
+        android:id="@+id/search_toolbar">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Search"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="24dp" />
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_toolbar">
+
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:hint="Search..."
+            android:inputType="textCapSentences"
+            android:id="@+id/search_edit"/>
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/search_edit"
+            android:background="@drawable/bg_button"
+            android:text="Search"
+            android:textColor="#fff"
+            android:layout_marginTop="30dp"
+            android:textSize="18dp"
+            android:id="@+id/button_search"
+            android:layout_centerHorizontal="true"/>
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/result_list"
             android:layout_width="match_parent"
-            android:layout_height="272dp"
-            tools:layout_editor_absoluteY="387dp"></android.support.v7.widget.RecyclerView>
-    </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+            android:layout_height="wrap_content"
+            android:id="@+id/search_recycler"
+            android:layout_below="@id/button_search"
+            android:layout_marginTop="20dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

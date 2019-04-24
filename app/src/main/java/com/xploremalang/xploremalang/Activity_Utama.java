@@ -158,7 +158,7 @@ public class Activity_Utama extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(Activity_Utama.this,menu_search.class));
+            startActivity(new Intent(Activity_Utama.this,Search.class));
         }
 
         return super.onOptionsItemSelected(item);
