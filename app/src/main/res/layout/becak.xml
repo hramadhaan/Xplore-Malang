@@ -13,7 +13,7 @@
             android:id="@+id/Becak_Image"
             android:layout_width="wrap_content"
             android:layout_height="220dp"
-            android:src="@drawable/macito" />
+            android:src="@drawable/becak" />
 
         <TextView
             android:id="@+id/tvBecak"

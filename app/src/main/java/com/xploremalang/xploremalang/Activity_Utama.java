@@ -158,7 +158,7 @@ public class Activity_Utama extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(Activity_Utama.this,Search.class));
+            startActivity(new Intent(Activity_Utama.this,SettingsActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
@@ -175,12 +175,12 @@ public class Activity_Utama extends AppCompatActivity
                Intent profil = new Intent(Activity_Utama.this, EditProfile.class);
                startActivity(profil);
                break;
-           case R.id.nav_feedback:
-               Toast.makeText(Activity_Utama.this,"Ini Tombol Lihat Feedback",Toast.LENGTH_SHORT).show();
-               break;
-           case R.id.nav_diskusi:
-               Toast.makeText(Activity_Utama.this,"Ini Tombol Lihat Diskusi",Toast.LENGTH_SHORT).show();
-               break;
+//           case R.id.nav_feedback:
+//               Toast.makeText(Activity_Utama.this,"Ini Tombol Lihat Feedback",Toast.LENGTH_SHORT).show();
+//               break;
+//           case R.id.nav_diskusi:
+//               Toast.makeText(Activity_Utama.this,"Ini Tombol Lihat Diskusi",Toast.LENGTH_SHORT).show();
+//               break;
            case R.id.nav_transportasi:
                Intent transportasi = new Intent(Activity_Utama.this, Transportasi.class);
                startActivity(transportasi);

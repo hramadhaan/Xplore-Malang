@@ -29,7 +29,9 @@
             android:layout_marginTop="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Macito adalah Singkatan dari Malang City Tour Bus merupakan transportasi umum di kota Malang yang dikhususkan untuk pariwisata. Macito ini gratis. Jika kamu hanya punya waktu singkat, tetapi ingin berkeliling kota Malang bisa naik macito. "
+            android:text="Dari Bandara Internasional Juanda, Surabaya banyak terdapat mobil travel yang bisa mengantarkan anda ke Malang. Tarifnya sekitar Rp 85.000.(Th. 2015) Sedangkan dari Bandara ke Batu Kota / Kec. Tumpang tarifnya sekitar Rp 105.000.
+
+Mobil yang digunakan sejenis MPV seperti Avanza/Xenia yang bisa memuat hingga 4-5 orang. Bahkan jika anda meunju Malang menggunakan akses kapal laut, tersedia juga travel dari Pelabuhan Tanjung Perak ke Malang dengan tarif travel Rp 115.000 dan ke Batu Rp 135.000. "
             android:textSize="18sp" />
         <Button
             android:id="@+id/cancelButton"

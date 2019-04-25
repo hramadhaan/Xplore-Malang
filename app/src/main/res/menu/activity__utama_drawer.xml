@@ -7,12 +7,12 @@
         <item
             android:id="@+id/nav_edit_profl"
             android:title="Edit Profil" />
-        <item
-            android:id="@+id/nav_feedback"
-            android:title="Lihat Feedback" />
-        <item
-            android:id="@+id/nav_diskusi"
-            android:title="Lihat Diskusi" />
+        <!--<item-->
+        <!--android:id="@+id/nav_feedback"-->
+        <!--android:title="Lihat Feedback" />-->
+        <!--<item-->
+        <!--android:id="@+id/nav_diskusi"-->
+        <!--android:title="Lihat Diskusi" />-->
         <item android:id="@+id/nav_transportasi"
             android:title="Transportasi"/>
         <item

@@ -13,7 +13,7 @@
             android:id="@+id/RMotor_Image"
             android:layout_width="wrap_content"
             android:layout_height="220dp"
-            android:src="@drawable/macito" />
+            android:src="@drawable/rental_motor" />
 
         <TextView
             android:id="@+id/tvRMotor"
@@ -26,10 +26,18 @@
 
         <TextView
             android:id="@+id/descRMotor"
-            android:layout_marginTop="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Macito adalah Singkatan dari Malang City Tour Bus merupakan transportasi umum di kota Malang yang dikhususkan untuk pariwisata. Macito ini gratis. Jika kamu hanya punya waktu singkat, tetapi ingin berkeliling kota Malang bisa naik macito. "
+            android:layout_marginTop="50dp"
+            android:text="Di kota Malang terdapat banyak penyewaan motor diantaranya :
+- Favian Backpacker (082230309891)
+- Trisna Rent (0857303096178)
+- Putra Rental Motor (085842309877)
+- Syasya Jaya Rent (08871903901)
+
+Tarif sewa motor harian disini cukup murah yakni sekitar Rp 75.000, tarif mingguan, Rp 350.000, serta bulanan Rp 1.050.000.
+Untuk penyewaan dapat langsung menghubungi nomor yang tertera, dan langsung
+diantar ke lokasi anda. "
             android:textSize="18sp" />
         <Button
             android:id="@+id/cancelButton"
