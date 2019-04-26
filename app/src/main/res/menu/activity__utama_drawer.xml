@@ -4,31 +4,41 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_edit_profl"
-            android:title="Edit Profil" />
-        <!--<item-->
-        <!--android:id="@+id/nav_feedback"-->
-        <!--android:title="Lihat Feedback" />-->
-        <!--<item-->
-        <!--android:id="@+id/nav_diskusi"-->
-        <!--android:title="Lihat Diskusi" />-->
-        <item android:id="@+id/nav_transportasi"
-            android:title="Transportasi"/>
-        <item
-            android:id="@+id/nav_about"
-            android:title="About Us" />
-        <item
-            android:id="@+id/nav_logout"
-            android:title="Log Out"/>
+        <item android:title="Fitur-Fitur">
+            <menu>
+                <item android:id="@+id/nav_transportasi"
+                    android:title="Transportasi"
+                    android:icon="@drawable/ic_directions_car_black_24dp"/>
+                <item
+                    android:id="@+id/nav_send"
+                    android:title="Cek Cuaca"
+                    android:icon="@drawable/ic_cloud_black_24dp"/>
+            </menu>
+        </item>
+
+        <item android:title="Tentang Kami">
+            <menu>
+                <item
+                android:id="@+id/nav_about"
+                android:title="Xplore Malang"
+                android:icon="@drawable/ic_sentiment_satisfied_black_24dp"/>
+            </menu>
+        </item>
+
+        <item android:title="Pengaturan Akun">
+            <menu>
+                <item
+                    android:id="@+id/nav_edit_profl"
+                    android:title="Edit Profil"
+                    android:icon="@drawable/ic_mode_edit_black_24dp"/>
+                <item
+                    android:id="@+id/nav_logout"
+                    android:title="Log Out"
+                    android:icon="@drawable/ic_lock_open_black_24dp"/>
+            </menu>
+        </item>
+
     </group>
 
-    <item android:title="Cuaca Saat Ini">
-        <menu>
-            <item
-                android:id="@+id/nav_send"
-                android:title="Cek Cuaca" />
-        </menu>
-    </item>
 
 </menu>
