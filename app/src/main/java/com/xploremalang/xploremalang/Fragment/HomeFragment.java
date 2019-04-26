@@ -1,11 +1,15 @@
 package com.xploremalang.xploremalang.Fragment;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.ConfigurationInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -61,10 +65,20 @@ public class HomeFragment extends Fragment{
         recyclerView = van.findViewById(R.id.recycler_home);
         recyclerView.setHasFixedSize(true);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        linearLayoutManager.setReverseLayout(true);
-        linearLayoutManager.setStackFromEnd(true);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+            //        PORTRAIT
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+            linearLayoutManager.setReverseLayout(true);
+            linearLayoutManager.setStackFromEnd(true);
+            recyclerView.setLayoutManager(linearLayoutManager);
+        } else {
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),2);
+            gridLayoutManager.setReverseLayout(true);
+//            gridLayoutManager.setStackFromEnd(true);
+            recyclerView.setLayoutManager(gridLayoutManager);
+        }
+
+
 
         progressBar = van.findViewById(R.id.barProgressHome);
 
