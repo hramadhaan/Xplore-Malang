@@ -1,6 +1,7 @@
 package com.xploremalang.xploremalang.Fragment;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -56,7 +57,20 @@ public class FeedFragment extends Fragment {
 
         mRecyclerView = van.findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+            //        PORTRAIT
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+            linearLayoutManager.setReverseLayout(true);
+            linearLayoutManager.setStackFromEnd(true);
+            mRecyclerView.setLayoutManager(linearLayoutManager);
+        } else {
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),4);
+            gridLayoutManager.setReverseLayout(true);
+//            gridLayoutManager.setStackFromEnd(true);
+            mRecyclerView.setLayoutManager(gridLayoutManager);
+        }
+
+
 
         mProgressCircle = van.findViewById(R.id.progress_circle);
 
