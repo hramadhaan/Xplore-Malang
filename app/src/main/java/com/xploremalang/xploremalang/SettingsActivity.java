@@ -1,6 +1,13 @@
 package com.xploremalang.xploremalang;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
+import android.widget.Button;
+import android.widget.Switch;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -37,7 +44,7 @@ public class SettingsActivity extends AppCompatActivity {
             }
         }
 
-        super.onCreate(savedInstanceState);
+        //super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         mode = findViewById(R.id.mode);
         size = findViewById(R.id.size);

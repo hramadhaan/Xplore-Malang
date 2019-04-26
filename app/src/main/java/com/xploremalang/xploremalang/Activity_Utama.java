@@ -109,28 +109,28 @@ public class Activity_Utama extends AppCompatActivity
 
     }
 
-//    BOTTOM NAV
+    //    BOTTOM NAV
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new
-        BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                Fragment selectedFragment = null;
-                switch (menuItem.getItemId()){
-                    case R.id.home_button:
-                        selectedFragment = new HomeFragment();
-                        break;
-                    case R.id.feed_button:
-                        selectedFragment = new FeedFragment();
-                        break;
-                    case R.id.profile_button:
-                        selectedFragment = new ProfileFragment();
-                        break;
+            BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                    Fragment selectedFragment = null;
+                    switch (menuItem.getItemId()){
+                        case R.id.home_button:
+                            selectedFragment = new HomeFragment();
+                            break;
+                        case R.id.feed_button:
+                            selectedFragment = new FeedFragment();
+                            break;
+                        case R.id.profile_button:
+                            selectedFragment = new ProfileFragment();
+                            break;
+                    }
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fl_activity,
+                            selectedFragment).commit();
+                    return true;
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.fl_activity,
-                        selectedFragment).commit();
-                return true;
-            }
-        };
+            };
 
     @Override
     public void onBackPressed() {
@@ -145,7 +145,7 @@ public class Activity_Utama extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity__utama, menu);
+        getMenuInflater().inflate(R.menu.home, menu);
         return true;
     }
 
@@ -170,35 +170,35 @@ public class Activity_Utama extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-       switch (id){
-           case R.id.nav_edit_profl:
-               Intent profil = new Intent(Activity_Utama.this, EditProfile.class);
-               startActivity(profil);
-               break;
+        switch (id){
+            case R.id.nav_edit_profl:
+                Intent profil = new Intent(Activity_Utama.this, EditProfile.class);
+                startActivity(profil);
+                break;
 //           case R.id.nav_feedback:
 //               Toast.makeText(Activity_Utama.this,"Ini Tombol Lihat Feedback",Toast.LENGTH_SHORT).show();
 //               break;
 //           case R.id.nav_diskusi:
 //               Toast.makeText(Activity_Utama.this,"Ini Tombol Lihat Diskusi",Toast.LENGTH_SHORT).show();
 //               break;
-           case R.id.nav_transportasi:
-               Intent transportasi = new Intent(Activity_Utama.this, Transportasi.class);
-               startActivity(transportasi);
-               break;
-           case R.id.nav_about:
-               Toast.makeText(Activity_Utama.this,"Ini Tombol About Us",Toast.LENGTH_SHORT).show();
-               Intent about = new Intent(Activity_Utama.this,about.class);
-               startActivity(about);
-               break;
+            case R.id.nav_transportasi:
+                Intent transportasi = new Intent(Activity_Utama.this, Transportasi.class);
+                startActivity(transportasi);
+                break;
+            case R.id.nav_about:
+                Toast.makeText(Activity_Utama.this,"Ini Tombol About Us",Toast.LENGTH_SHORT).show();
+                Intent about = new Intent(Activity_Utama.this,about.class);
+                startActivity(about);
+                break;
 
-           case R.id.nav_send:
-               startActivity(new Intent(Activity_Utama.this, MainActivity_weather.class));
-               break;
-           case R.id.nav_logout:
-               Toast.makeText(Activity_Utama.this,"Log Out",Toast.LENGTH_SHORT).show();
-               mAuth.signOut();
-               break;
-       }
+            case R.id.nav_send:
+                startActivity(new Intent(Activity_Utama.this, MainActivity_weather.class));
+                break;
+            case R.id.nav_logout:
+                Toast.makeText(Activity_Utama.this,"Log Out",Toast.LENGTH_SHORT).show();
+                mAuth.signOut();
+                break;
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -216,4 +216,5 @@ public class Activity_Utama extends AppCompatActivity
         super.onStop();
         mAuth.removeAuthStateListener(mAuthListener);
     }
+
 }

@@ -3,4 +3,5 @@
     <item name="comment_item_image_profile" type="id" />
     <item name="comment_item_username" type="id" />
     <item name="comment_item_comment" type="id" />
+    <item name="activity_settings" type="id" />
 </resources>
