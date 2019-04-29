@@ -123,64 +123,73 @@ public class TambahKonten extends AppCompatActivity {
     }
 
     private void uploadImage() {
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Uploading...");
-        progressDialog.show();
-
-        if (mImageUri!=null){
-            final StorageReference filereference = storageReference.child(System.currentTimeMillis()
-                    +"."+getFileExtension(mImageUri));
-
-            uploadTask = filereference.putFile(mImageUri);
-            uploadTask.continueWithTask(new Continuation() {
-                @Override
-                public Object then(@NonNull Task task) throws Exception {
-                    if (!task.isSuccessful()){
-                        throw task.getException();
-                    }
-                    return filereference.getDownloadUrl();
-                }
-            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                @Override
-                public void onComplete(@NonNull Task<Uri> task) {
-                    if (task.isSuccessful()){
-                        Uri downloadUri = task.getResult();
-                        myUri = downloadUri.toString();
-
-                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Konten");
-
-                        String postId = reference.push().getKey();
-
-                        HashMap<String,Object> hashMap = new HashMap<>();
-
-                        hashMap.put("postId",postId);
-                        hashMap.put("postImage",myUri);
-                        hashMap.put("description",et_deskripsi.getText().toString());
-                        hashMap.put("wisata",et_wisata.getText().toString());
-                        hashMap.put("latitude",et_latitude.getText().toString());
-                        hashMap.put("longtitude",et_longtitude.getText().toString());
-                        hashMap.put("jenis_konten",spinner_konten.getSelectedItem().toString());
-                        hashMap.put("publisher",FirebaseAuth.getInstance().getCurrentUser().getUid());
-
-                        reference.child(postId).setValue(hashMap);
-
-                        progressDialog.dismiss();
-
-                        startActivity(new Intent(TambahKonten.this,Activity_Utama.class));
-                        finish();
-                    } else {
-                        Toast.makeText(TambahKonten.this,"Failed",Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(TambahKonten.this,""+e.getMessage(),Toast.LENGTH_SHORT).show();
-                }
-            });
+        String deskripsi = et_deskripsi.getText().toString();
+        String latitude = et_latitude.getText().toString();
+        String longtitude = et_longtitude.getText().toString();
+        if (TextUtils.isEmpty(deskripsi)||TextUtils.isEmpty(latitude)||TextUtils.isEmpty(longtitude)){
+            Toast.makeText(TambahKonten.this,"Fields are Required !",Toast.LENGTH_SHORT);
         } else {
-            Toast.makeText(this,"Image selected",Toast.LENGTH_SHORT).show();
+            final ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.setMessage("Uploading...");
+            progressDialog.show();
+
+            if (mImageUri!=null){
+                final StorageReference filereference = storageReference.child(System.currentTimeMillis()
+                        +"."+getFileExtension(mImageUri));
+
+                uploadTask = filereference.putFile(mImageUri);
+                uploadTask.continueWithTask(new Continuation() {
+                    @Override
+                    public Object then(@NonNull Task task) throws Exception {
+                        if (!task.isSuccessful()){
+                            throw task.getException();
+                        }
+                        return filereference.getDownloadUrl();
+                    }
+                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Uri> task) {
+                        if (task.isSuccessful()){
+                            Uri downloadUri = task.getResult();
+                            myUri = downloadUri.toString();
+
+                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Konten");
+
+                            String postId = reference.push().getKey();
+
+                            HashMap<String,Object> hashMap = new HashMap<>();
+
+                            hashMap.put("postId",postId);
+                            hashMap.put("postImage",myUri);
+                            hashMap.put("description",et_deskripsi.getText().toString());
+                            hashMap.put("wisata",et_wisata.getText().toString());
+                            hashMap.put("latitude",et_latitude.getText().toString());
+                            hashMap.put("longtitude",et_longtitude.getText().toString());
+                            hashMap.put("jenis_konten",spinner_konten.getSelectedItem().toString());
+                            hashMap.put("publisher",FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+                            reference.child(postId).setValue(hashMap);
+
+                            progressDialog.dismiss();
+
+                            startActivity(new Intent(TambahKonten.this,Activity_Utama.class));
+                            finish();
+                        } else {
+                            Toast.makeText(TambahKonten.this,"Failed",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(TambahKonten.this,""+e.getMessage(),Toast.LENGTH_SHORT).show();
+                    }
+                });
+            } else {
+                Toast.makeText(this,"Image selected",Toast.LENGTH_SHORT).show();
+            }
         }
+
+
     }
 
 }

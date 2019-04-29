@@ -4,4 +4,5 @@
     <item name="comment_item_username" type="id" />
     <item name="comment_item_comment" type="id" />
     <item name="activity_settings" type="id" />
+    <item name="main_coordinator" type="id" />
 </resources>

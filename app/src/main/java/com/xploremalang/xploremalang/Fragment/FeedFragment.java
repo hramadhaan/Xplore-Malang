@@ -1,6 +1,8 @@
 package com.xploremalang.xploremalang.Fragment;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.facebook.share.Share;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,7 +42,7 @@ public class FeedFragment extends Fragment {
 
     private DatabaseReference mDatabaseRef;
     private List<Upload> mUploads;
-
+    boolean theme;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -93,6 +96,7 @@ public class FeedFragment extends Fragment {
                 Toast.makeText(getActivity(),databaseError.getMessage(),Toast.LENGTH_SHORT).show();
             }
         });
+        
 
         return van;
     }

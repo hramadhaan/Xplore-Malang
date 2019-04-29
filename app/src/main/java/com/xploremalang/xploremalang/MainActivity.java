@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         callbackManager = CallbackManager.Factory.create();
 
         loginButton = (LoginButton) findViewById(R.id.login_button);
-        loginButton.setReadPermissions("email");
+//        loginButton.setReadPermissions("email");
         // If using in a fragment
         //loginButton.setActivity(MainActivity.this);
 

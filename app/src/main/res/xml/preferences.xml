@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_title_notifications">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/notifications_new_message"
+            android:title="@string/title_new_notification_sound" />
+
+        <RingtonePreference
+            android:defaultValue="content://settings/system/notification_sound"
+            android:dependency="notifications_new_message"
+            android:key="@string/key_notifications_new_message_ringtone"
+            android:ringtoneType="notification"
+            android:summary="@string/summary_choose_ringtone"
+            android:title="@string/pref_title_ringtone" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/key_vibrate"
+            android:summary="@string/summary_vibrate"
+            android:title="@string/title_vibrate" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_header_about">
+        <Preference
+            android:key="@string/key_send_feedback"
+            android:summary="@string/summary_support"
+            android:title="@string/title_send_feedback" />
+
+        <Preference
+            android:key="aboutus"
+            android:title="About Us" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Other">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="Night_Mode"
+            android:summary="night mode"
+            android:title="Night Mode" />
+    </PreferenceCategory>
+</PreferenceScreen>

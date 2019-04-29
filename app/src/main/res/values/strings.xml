@@ -105,4 +105,18 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_pengaturan">Settings</string>
+    <string name="key_notifications_new_message_ringtone" />
+    <string name="key_send_feedback" />
+    <string name="summary_choose_ringtone" />
+    <string name="choose_email_client" />
+    <string name="key_vibrate" />
+    <string name="summary_vibrate" />
+    <string name="title_vibrate" />
+    <string name="pref_header_about" />
+    <string name="summary_support" />
+    <string name="title_send_feedback" />
+    <string name="pref_title_notifications" />
+    <string name="notifications_new_message" />
+    <string name="title_new_notification_sound" />
 </resources>

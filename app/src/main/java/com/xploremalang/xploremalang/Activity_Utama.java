@@ -1,9 +1,11 @@
 package com.xploremalang.xploremalang;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.design.widget.NavigationView;
@@ -42,6 +44,9 @@ public class Activity_Utama extends AppCompatActivity
 
     ImageView mimageView;
     TextView mtextView;
+
+    CoordinatorLayout coord_main;
+    boolean theme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +92,25 @@ public class Activity_Utama extends AppCompatActivity
         getSupportFragmentManager().beginTransaction().replace(R.id.fl_activity,
                 new HomeFragment()).commit();
 
+//
+        SharedPreferences preferences = getSharedPreferences("prefs", MODE_PRIVATE);
+        theme = preferences.getBoolean("dark_theme", false);
+        boolean font = preferences.getBoolean("font_large", false);
+        if (theme && font) {
+            setTheme(R.style.AppTheme_Dark_FontLarge);
+        } else if (theme) {
+            setTheme(R.style.AppTheme_Dark_FontNormal);
+        } else if (font) {
+            setTheme(R.style.AppTheme_FontLarge);
+        }
+
+        initUI();
     }
+
+    private void initUI() {
+        coord_main = findViewById(R.id.main_coordinator);
+    }
+
 
     private void loadUserInformation(NavigationView navigationView) {
         View nav_header = navigationView.getHeaderView(0);
@@ -158,7 +181,7 @@ public class Activity_Utama extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(Activity_Utama.this,SettingsActivity.class));
+            startActivity(new Intent(Activity_Utama.this,Pengaturan.class));
         }
 
         return super.onOptionsItemSelected(item);

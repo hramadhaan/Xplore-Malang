@@ -209,6 +209,10 @@ public class LoginActivity extends AppCompatActivity {
 
         login_email = findViewById(R.id.et_email);
         login_password = findViewById(R.id.et_password);
+
+        String email = login_email.getText().toString();
+        String password = login_password.getText().toString();
+
     }
 
     public void btnSubmit(){
